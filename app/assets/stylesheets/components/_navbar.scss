@@ -1,6 +1,14 @@
+// Define custom font stack
+$font-stack: 'Roboto', sans-serif;
+.navbar {
+  padding: 0;
+  box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.2);
+}
+
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  background: #004129;; /* Dark grey background */
+  font-family: 'Kanit', sans-serif; /* Apply custom font */
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -8,5 +16,27 @@
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 40px;
+  max-width: 100%; /* Ensure the logo doesn't exceed the width of its container */
+  max-height: 55px; /* Set maximum height to maintain aspect ratio */
+}
+
+.navbar-toggler {
+  border: none; /* Remove border */
+}
+
+.nav-link {
+  color: #333; /* White link color */
+  font-weight: 700; /* Bold font weight */
+}
+
+.nav-link:hover {
+  color: #f2eae5; /* Brighter orange hover color */
+}
+
+@media (max-width: 767.98px) {
+  /* Adjust spacing for smaller screens */
+  .navbar-nav .nav-item {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
 }
