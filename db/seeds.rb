@@ -28,11 +28,12 @@ user_10 = User.create!(email: "test10@test.com", password: "123456")
 puts "User created!"
 
 puts "Creating games..."
+
 game_1 = Game.new(price: 7.0, game_size: 10 , date: DateTime.now, location: "Colombo Centre, Southwark, London", description: "All abilities are welcome to join, a mix between regulars and new players, quality new 4G artificial grass surface, closest station: Southwark, Please arrive 10 mins before KO so you are ready to start on time", gender:"Male", level: "Amatuer", completed: false)
 game_1.user = user_1
 game_1.save!
 
-game_2 = Game.new(price: 5.0, game_size: 10 , date: DateTime.now, location: "King Solomon Academy, Marylebone, London", description: "60mins game, arrive 10-15mins before kick off, no shouting and no aggressive behaviour, Respect Host decision, 4G artificial pitch. AG boots or astro ok. Team colour: Please bring both a light and dark top with you to help splitting the teams at the pitch", gender: "Female", level: " Intermediate", completed: false)
+game_2 = Game.new(price: 5.0, game_size: 10, date: DateTime.now, location: "King Solomon Academy, Marylebone, London", description: "60mins game, arrive 10-15mins before kick off, no shouting and no aggressive behaviour, Respect Host decision, 4G artificial pitch. AG boots or astro ok. Team colour: Please bring both a light and dark top with you to help splitting the teams at the pitch", gender: "Female", level: " Intermediate", completed: false)
 game_2.user = user_2
 game_2.save!
 
@@ -60,11 +61,11 @@ game_8 = Game.new(price: 5.0, game_size: 10 , date: DateTime.now, location: "Sta
 game_8.user = user_8
 game_8.save!
 
-game_9 = Game.new(price: 5.0, game_size: 10 , date: DateTime.now, location: "Manchester Communication Academy, Manchester", description: "All-weather 4G artificial grass. Big goals with sidelines. Footwear: Astro-turfs or moulds recommended. Guarantee a full refund as credit in your wallet when you honour the game's refund policy(check before booking)", gender: "Male", level: "Casual", completed: false)
+game_9 = Game.new(price: 5.0, game_size: 10 , date: DateTime.now, location: "Manchester Communication Academy, Manchester", description: "All-weather 4G artificial grass. Big goals with sidelines. Footwear: Astro-turfs or moulds recommended", gender: "Male", level: "Casual", completed: false)
 game_9.user = user_9
 game_9.save!
 
-game_10 = Game.new(price: 5.15, game_size: 10 , date: DateTime.now, location: "Horfield Leisure, Bristol", description: "Game on!!✔️🔥 Let's make sure that we arrive early with both dark and light coloured tops, so we can sort teams out quickly and make the most of our playing time!Any new players, just ask forr FootyHub and you will be pointed in the right direction. if you can no longer attend the game, you must vacate your spot by clicking leave game. Enjoy!", gender: "Any", level: "Intermediate", completed: false)
+game_10 = Game.new(price: 5.15, game_size: 10, date: DateTime.now, location: "Horfield Leisure, Bristol", description: "Game on!!✔️🔥 Let's make sure that we arrive early with both dark and light coloured tops, so we can sort teams out quickly and make the most of our playing time!Any new players, just ask forr FootyHub and you will be pointed in the right direction. if you can no longer attend the game, you must vacate your spot by clicking leave game. Enjoy!", gender: "Any", level: "Intermediate", completed: false)
 game_10.user = user_10
 game_10.save!
 puts "Games created!"
