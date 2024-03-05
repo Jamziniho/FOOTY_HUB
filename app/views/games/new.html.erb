@@ -4,7 +4,7 @@
   <%= f.input :location %>
   <%= f.input :date %>
   <%= f.input :game_size, collection: ["5-a-side", "7-a-side", "9-a-side", "11-a-side"] %>
-  <%= f.input :level, collection: ["any1", "any2", "any3"] %>
+  <%= f.input :level, collection: ["Amatuer", "Casual", "Intermediate", "Advanced"] %>
   <%= f.input :description %>
   <%= f.submit "Confirm", class: "btn btn-primary" %>
 <% end %>
