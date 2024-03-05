@@ -19,7 +19,7 @@
                 autofocus: true,
                 input_html: { autocomplete: "email" }%>
 
-    <%= f.input :level,
+    <%= f.input :level, collection: ["Amatuer" , "Casual", "Intermediate" , "Advanced"],
                 required: true,
                 autofocus: true,
                 input_html: { autocomplete: "level" }%>
@@ -29,7 +29,7 @@
                 autofocus: true,
                 input_html: { autocomplete: "age" }%>
 
-    <%= f.input :position,
+    <%= f.input :position, collection: ["Offensive" , "Defensive"],
                 required: true,
                 autofocus: true,
                 input_html: { autocomplete: "position" }%>
