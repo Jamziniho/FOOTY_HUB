@@ -1,6 +1,6 @@
 <div class="wholepage">
   <div class="heading-container">
-    <h1 class="headerone"> Available: <small class="results-count"><%= @games.length %> Results</small></h1>
+    <h1 class="headerone"> Available: <small class="results-count"><%= @games.length %> Games</small></h1>
   </div>
 
 <div class="row justify-content-center searchbar">
@@ -27,12 +27,12 @@
                 <h5 class="game-card-title"><%= "#{game.location}" %></h5>
                 <h4 class="game-card-date"><%= "#{game.date}" %></h4>
                 <div class="d-flex">
-                  <p class="p1"><%= "#{game.game_size}"%></p>
+                  <p class="p1"><%= "#{game.game_size}-a-side"%></p>
                 </div>
               </div>
               <div class="col-md-2 d-flex justify-content-end">
                 <div class="text-end game-price">
-                  <p class="price-text">£<%= "#{game.price.round} / day" %></p>
+                  <p class="price-text">£<%= "#{game.price.round} / player" %></p>
                   <%= link_to "Select",game_path(game), class: "btn-fcard" %>
                 </div>
               </div>

@@ -1,0 +1,13 @@
+<h1>Join @host.name's Game</h1>
+<ul>
+<li>Game Size: <%= @games.game_size %>-a-side</li>
+<li>Date & Time: <%= @games.date %></li>
+<li>Location: <%= @games.location %></li>
+<li>Price Per Player: £<%= @games.price %></li>
+<li>Gender: <%= @games.gender %></li>
+</ul>
+
+<p>Additional Info:</p>
+<p><%= @games.description %></p>
+
+<%= link_to "Join Game" %>
