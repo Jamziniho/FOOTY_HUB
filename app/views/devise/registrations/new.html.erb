@@ -9,10 +9,31 @@
                 autofocus: true,
                 input_html: { autocomplete: "first_name" }%>
 
+    <%= f.input :last_name,
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "last_name" }%>
+
     <%= f.input :email,
                 required: true,
                 autofocus: true,
                 input_html: { autocomplete: "email" }%>
+
+    <%= f.input :level, collection: ["Amatuer" , "Casual", "Intermediate" , "Advanced"],
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "level" }%>
+
+    <%= f.input :age,
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "age" }%>
+
+    <%= f.input :position, collection: ["Offensive" , "Defensive"],
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "position" }%>
+
     <%= f.input :password,
                 required: true,
                 hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),

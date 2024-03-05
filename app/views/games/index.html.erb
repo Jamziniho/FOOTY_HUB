@@ -23,19 +23,19 @@
         <div class="game-card-body d-flex justify-content-between">
           <!-- Car image column -->
           <div class="col-md-10 car-div d-flex">
-                <div class="description-title">
-                  <h5 class="game-card-title"><%= "#{game.location}" %></h5>
-                  <h4 class="game-card-date"><%= "#{game.date}" %></h4>
-                    <div class="d-flex">
-                        <p class="p1"><%= "#{game.game_size}"%></p>
-                    </div>
+              <div class="description-title">
+                <h5 class="game-card-title"><%= "#{game.location}" %></h5>
+                <h4 class="game-card-date"><%= "#{game.date}" %></h4>
+                <div class="d-flex">
+                  <p class="p1"><%= "#{game.game_size}"%></p>
                 </div>
-                      <div class="col-md-2 d-flex justify-content-end">
-                        <div class="text-end game-price">
-                          <p class="price-text">£<%= "#{game.price.round} / day" %></p>
-                          <%= link_to "Select",game_path(game), class: "btn-fcard" %>
-                        </div>
-                      </div>
+              </div>
+              <div class="col-md-2 d-flex justify-content-end">
+                <div class="text-end game-price">
+                  <p class="price-text">£<%= "#{game.price.round} / day" %></p>
+                  <%= link_to "Select",game_path(game), class: "btn-fcard" %>
+                </div>
+              </div>
           </div>
         </div>
       </div>
