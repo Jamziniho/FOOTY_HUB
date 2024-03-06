@@ -1,5 +1,6 @@
 class Game < ApplicationRecord
   belongs_to :user
+  has_one :chatroom
   has_many :players
   validates  :price, presence: true
   validates  :game_size, presence: true
