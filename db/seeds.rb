@@ -29,43 +29,43 @@ puts "User created!"
 
 puts "Creating games..."
 
-game_1 = Game.new(price: 7.0, game_size: 5 , date: DateTime.parse, location: "Colombo Centre, Southwark, London", description: "All abilities are welcome to join, a mix between regulars and new players, quality new 4G artificial grass surface, closest station: Southwark, Please arrive 10 mins before KO so you are ready to start on time", gender:"Male", level: "Amatuer", completed: false)
+game_1 = Game.new(price: 7.0, game_size: 5 , date: DateTime.parse("2024/03/30/ 13:00"), location: "Colombo Centre, Southwark, London", description: "All abilities are welcome to join, a mix between regulars and new players, quality new 4G artificial grass surface, closest station: Southwark, Please arrive 10 mins before KO so you are ready to start on time", gender:"Male", level: "Amatuer", completed: false)
 game_1.user = user_1
 game_1.save!
 
-game_2 = Game.new(price: 5.0, game_size: 7, date: DateTime.parse("03/30/2024 13:00"), location: "King Solomon Academy, Marylebone, London", description: "60mins game, arrive 10-15mins before kick off, no shouting and no aggressive behaviour, Respect Host decision, 4G artificial pitch. AG boots or astro ok. Team colour: Please bring both a light and dark top with you to help splitting the teams at the pitch", gender: "Female", level: " Intermediate", completed: false)
+game_2 = Game.new(price: 5.0, game_size: 7, date: DateTime.parse("2024/03/30 13:00"), location: "King Solomon Academy, Marylebone, London", description: "60mins game, arrive 10-15mins before kick off, no shouting and no aggressive behaviour, Respect Host decision, 4G artificial pitch. AG boots or astro ok. Team colour: Please bring both a light and dark top with you to help splitting the teams at the pitch", gender: "Female", level: " Intermediate", completed: false)
 game_2.user = user_2
 game_2.save!
 
-game_3 = Game.new(price: 6.0, game_size: 11 , date: DateTime.parse("03/30/2024 13:00"), location: "City of London Academy. Islington, London", description: "This casual and inclusive game is open to players of all skills and abilities, Please come 10 minutes before the kick-off.", gender: "Any", level: "Casual", completed: false)
+game_3 = Game.new(price: 6.0, game_size: 11 , date: DateTime.parse("2024/03/30 13:00"), location: "City of London Academy. Islington, London", description: "This casual and inclusive game is open to players of all skills and abilities, Please come 10 minutes before the kick-off.", gender: "Any", level: "Casual", completed: false)
 game_3.user = user_3
 game_3.save!
 
-game_4 = Game.new(price: 5.50, game_size: 9 , date: DateTime.parse("04/30/2024 13:00"), location: "Battersea Park All Weather Sports Ground, London", description: "1 hour game, everyone welcome to join. Battersea Park station(Northern): 5min walk, Limited street-parking. Changing Rooms and showers available.", gender: "Male", level: "Advanced", completed: false)
+game_4 = Game.new(price: 5.50, game_size: 9 , date: DateTime.parse("2024/04/30 13:00"), location: "Battersea Park All Weather Sports Ground, London", description: "1 hour game, everyone welcome to join. Battersea Park station(Northern): 5min walk, Limited street-parking. Changing Rooms and showers available.", gender: "Male", level: "Advanced", completed: false)
 game_4.user = user_4
 game_4.save!
 
-game_5 = Game.new(price: 7.5, game_size: 5 , date: DateTime.parse("03/28/2024 13:00"), location: "Powerleague, Shoreditch, London", description: "Closest train station is Shoredtch. Meet 10 minutes before kick-off outside Pitch 4, people who turn up late might lose their spot. 3G artificial grass surface, outdoors, covered pitch. Everyone must play fair, respect their oppenents and fellow players. Fresh bibs will be provided ", gender: "Any", level: "Intermediate", completed: false)
+game_5 = Game.new(price: 7.5, game_size: 5 , date: DateTime.parse("2024/03/28 13:00"), location: "Powerleague, Shoreditch, London", description: "Closest train station is Shoredtch. Meet 10 minutes before kick-off outside Pitch 4, people who turn up late might lose their spot. 3G artificial grass surface, outdoors, covered pitch. Everyone must play fair, respect their oppenents and fellow players. Fresh bibs will be provided ", gender: "Any", level: "Intermediate", completed: false)
 game_5.user = user_5
 game_5.save!
 
-game_6 = Game.new(price: 6.30, game_size: 7 , date: DateTime.parse("06/30/2024 13:00"), location: "Trinity Sports Centre, Manchester", description: "Come and play a casual footbal game in Central Manchester. We play at Pitch 2 (Middle pitch), we promote a friendly atmosphere - no shouting or aggressive behaviour. If you can't make it, ensure you remove your name from the list ASAP. No spot selling or trading allowed!. All weather 4G artifiacial grass. Big goals with side lines. Footwear: Astro-turfs or moulds recommended, no metal studs or blades. Changing rooms and showers available", gender: "Male", level: "Casual", completed: false)
+game_6 = Game.new(price: 6.30, game_size: 7 , date: DateTime.parse("2024/06/30 13:00"), location: "Trinity Sports Centre, Manchester", description: "Come and play a casual footbal game in Central Manchester. We play at Pitch 2 (Middle pitch), we promote a friendly atmosphere - no shouting or aggressive behaviour. If you can't make it, ensure you remove your name from the list ASAP. No spot selling or trading allowed!. All weather 4G artifiacial grass. Big goals with side lines. Footwear: Astro-turfs or moulds recommended, no metal studs or blades. Changing rooms and showers available", gender: "Male", level: "Casual", completed: false)
 game_6.user = user_6
 game_6.save!
 
-game_7 = Game.new(price: 6.0, game_size: 9 , date: DateTime.parse("03/27/2024 13:00"), location: "Goals Sporta Centres, Leeds", description: "All abilities are welcome to join. Mix betwwen regulars and new players. Quality 4G artificial grass surface. No metal studs. Shoowers & changing rooms available. free parking available. Please bring both light and dark top with you to help splitting the teams at the pitch in case of no bibs", gender: "female", level: "Amatuer", completed: false)
+game_7 = Game.new(price: 6.0, game_size: 9 , date: DateTime.parse("2024/03/27 13:00"), location: "Goals Sporta Centres, Leeds", description: "All abilities are welcome to join. Mix betwwen regulars and new players. Quality 4G artificial grass surface. No metal studs. Shoowers & changing rooms available. free parking available. Please bring both light and dark top with you to help splitting the teams at the pitch in case of no bibs", gender: "female", level: "Amatuer", completed: false)
 game_7.user = user_7
 game_7.save!
 
-game_8 = Game.new(price: 5.0, game_size: 7 , date: DateTime.parse("05/16/2024 13:00"), location: "Stannyfields, Liverpool", description: "Please arrive 10-15mins before. 1-hour slot. Brief intros, team selections and we'll kick-off", gender: "Any", level: "Advanced", completed: false)
+game_8 = Game.new(price: 5.0, game_size: 7 , date: DateTime.parse("2024/05/16 13:00"), location: "Stannyfields, Liverpool", description: "Please arrive 10-15mins before. 1-hour slot. Brief intros, team selections and we'll kick-off", gender: "Any", level: "Advanced", completed: false)
 game_8.user = user_8
 game_8.save!
 
-game_9 = Game.new(price: 5.0, game_size: 11 , date: DateTime.parse("04/02/2024 13:00"), location: "Manchester Communication Academy, Manchester", description: "All-weather 4G artificial grass. Big goals with sidelines. Footwear: Astro-turfs or moulds recommended", gender: "Male", level: "Casual", completed: false)
+game_9 = Game.new(price: 5.0, game_size: 11 , date: DateTime.parse("2024/04/02 13:00"), location: "Manchester Communication Academy, Manchester", description: "All-weather 4G artificial grass. Big goals with sidelines. Footwear: Astro-turfs or moulds recommended", gender: "Male", level: "Casual", completed: false)
 game_9.user = user_9
 game_9.save!
 
-game_10 = Game.new(price: 5.15, game_size: 7, date: DateTime.parse("03/30/2024 16:00"), location: "Horfield Leisure, Bristol", description: "Game on!!✔️🔥 Let's make sure that we arrive early with both dark and light coloured tops, so we can sort teams out quickly and make the most of our playing time!Any new players, just ask for FootyHub and you will be pointed in the right direction. Enjoy!", gender: "Any", level: "Intermediate", completed: false)
+game_10 = Game.new(price: 5.15, game_size: 7, date: DateTime.parse("2024/03/30 16:00"), location: "Horfield Leisure, Bristol", description: "Game on!!✔️🔥 Let's make sure that we arrive early with both dark and light coloured tops, so we can sort teams out quickly and make the most of our playing time!Any new players, just ask for FootyHub and you will be pointed in the right direction. Enjoy!", gender: "Any", level: "Intermediate", completed: false)
 game_10.user = user_10
 game_10.save!
 puts "Games created!"
