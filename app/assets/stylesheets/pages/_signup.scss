@@ -1,0 +1,36 @@
+.signup-title {
+  color: black;
+  margin-top: 10px;
+
+}
+.form-label {
+  color: #C11E1E;
+  font-family:'Kanit', sans-serif;
+}
+.form-inputs {
+  display: block;
+  background-color: rgba(255, 255, 255, 0.736);
+  width: 100%;
+  padding: 8px 12px;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  appearance: none;
+  background-clip: padding-box;
+  border-radius: 2px;
+  border-bottom: 2px solid #C11E1E;
+}
+.navbar-lewagon {
+  justify-content: space-between;
+  background-color: #004129;
+  font-family:'Kanit', sans-serif;
+  font-weight:900;
+  font-size: large;
+  box-shadow: 0px 2px 3px rgba(0,0,0,0.2);
+  height: 150px;
+  padding-left: 180px;
+  border-radius: 2px;
+}
+.container{
+  background-color: white;
+}
