@@ -9,5 +9,8 @@
 
 <p>Additional Info:</p>
 <p><%= @games.description %></p>
-
-<%= link_to "Join Game" %>
+<% if @games.players.where({user_id: current_user.id}).length === 0 %>
+  <%= link_to "Join Game", game_players_path(@games), data: { turbo_method: :post } %>
+<% else %>
+  <p style="font-size: 20px;">Joined</p>
+<% end %>
