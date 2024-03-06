@@ -8,4 +8,8 @@ class ChatroomController < ApplicationController
       render :new, status: :unprocessable_entity
     end
   end
+
+  def show
+    @chatroom = Chatroom.find(params[:id])
+  end
 end
