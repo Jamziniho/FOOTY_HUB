@@ -24,7 +24,7 @@
 .index-headertwo{
   padding: 15px;
   font-size: 25px;
-  font-weight: 700px;
+  font-weight: 500px;
 }
 .indexcards{
   color:#fff;
@@ -45,15 +45,15 @@
 }
 
 .nav-button-container {
-  margin-top: 20px;
   display: flex;
+  justify-content: center;
+  text-align: center;
   gap: 25px;
 }
 
 .next, .prev{
-  padding: 10px;
   i {
-    color: white;
+    color: rgb(194, 31, 31);
   }
 }
 
