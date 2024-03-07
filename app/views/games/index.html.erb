@@ -5,7 +5,7 @@
 
     <div class="row justify-content-center searchbar m-0">
       <div class="col-sm-8 ">
-        <%= form_with url: games_path, method: :get, class: "d-flex index-search" do %>
+        <%= form_with url: games_path, method: :get, class: "d-flex index-search search-bar" do %>
           <%= text_field_tag :query,
                 params[:query],
                 class: "form-control",
@@ -23,32 +23,39 @@
         <div class="row full-games-card h-100 m-0 indexcards">
           <% @games.each do |game| %>
             <div class="col-md-6">
-              <div class="game-card">
-                <div class="game-card-body d-flex justify-content-between">
-                  <!-- Car image column -->
-                  <div class="col-md-10 car-div d-flex ">
-                      <div class="description-title">
-                        <h5 class="game-card-title"><%= "#{game.location}" %></h5>
-                        <h4 class="game-card-date"><%= "#{game.date.strftime("%m-%e-%y %H:%M")}" %></h4>
-                        <h4 class="game-card-host"><%= "Host: #{game.user.first_name}" %></h4>
-                        <div class="d-flex">
-                          <p class="p1"><%= "#{game.game_size}-a-side"%></p>
+              <%= link_to game_path(game), class: "text-decoration-none text-white" do %>
+                <div class="game-card">
+                  <div class="game-card-body d-flex justify-content-between">
+                    <!-- Car image column -->
+                    <div class="col-md-10 car-div d-flex ">
+                        <div class="description-title">
+                          <h5 class="game-card-title"><%= "#{game.location}" %></h5>
+                          <h5 class="game-card-date"><%= "#{game.date.strftime("%m-%e-%y %H:%M")}" %></h5>
+                          <h5 class="game-card-host"><%= "Host: #{game.user.first_name}" %></h5>
+                          <div class="d-flex">
+                            <h5 class="game-card-size"><%= "#{game.game_size}-a-side"%></h5>
+                          </div>
                         </div>
-                      </div>
-                      <div class="col-md-2 d-flex justify-content-end">
-                        <div class="text-end game-price">
-                          <p class="price-text">£<%= "#{game.price.round} / player" %></p>
-                          <%= link_to "Select",game_path(game), class: "btn-fcard selectbtn" %>
+                        <div class="col-md-2 d-flex justify-content-end">
+                          <div class="text-end game-price">
+                            <h5 class="price-text">£<%= "#{game.price.round} / player" %></h5>
+
+                          </div>
                         </div>
-                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
+              <% end %>
             </div>
           <% end %>
         </div>
       </div>
-      <div>
-      <%= link_to "Next", games_path(page: params[:page].nil? ? 1 : params[:page].to_i + 1 ), class: "next" %>
-  </div>
+      <div class="nav-button-container">
+        <%= link_to games_path(page: params[:page].nil? ? 1 : params[:page].to_i - 1 ), class: "prev" do %>
+          <i class="fa-solid fa-circle-left fa-2xl"></i>
+        <% end %>
+        <%= link_to games_path(page: params[:page].nil? ? 1 : params[:page].to_i + 1 ), class: "next" do %>
+          <i class="fa-solid fa-circle-right fa-2xl"></i>
+        <% end %>
+      </div>
 </div>
