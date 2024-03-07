@@ -1,7 +1,7 @@
 <div class="sign-up-container">
   <h1>Your profile</h1>
 
-  <% if current_user %>
+
     <%# user display pic %>
     <%= cl_image_tag current_user.photo.key, height: 300, width: 400, crop: :fill %>
 
@@ -16,5 +16,5 @@
     <%= current_user.email %>
 
     <%= current_user.matches_lost %>
-  <% end %>
+
 </div>
