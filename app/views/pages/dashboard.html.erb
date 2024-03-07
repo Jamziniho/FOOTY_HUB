@@ -1,15 +1,31 @@
-<h1>games joined</h1>
-<% @joined_games.each do |game| %>
-  <div>
-    <p><%= game.location %></p>
-    <%= link_to 'Chat', chatroom_path(game.chatroom.id) %>
-    <%= link_to 'Leave Game', game_player_path(game.id, current_user.id), data: { turbo_method: :delete }  %>
-  </div>
-<% end %>
-<h1>games hosted</h1>
-<% @hosted_games.each do |game| %>
-  <div>
-    <p><%= game.location %></p>
-    <%= link_to 'Chat', chatroom_path(game.chatroom.id) %>
-  </div>
-<% end %>
+<div class="index-background-img h-100" style="background-image: url('<%= asset_path('background-img.jpg') %>');">
+<div class="index-title">
+  <h1 class= "index-headerone d-flex justify-content-center" > FOOTY<span class="hub">HUB</span> </h1>
+</div>
+
+<h1 class= "dashboard-title">YOUR GAMES</h1>
+
+<div class="dashboard-card">
+  <h2 class = "dashboard-title-joined">Games joined</h1>
+  <% @joined_games.each do |game| %>
+    <div>
+      <p class="dashboard-card-location"><%= game.location %></p>
+      <p class="dashboard-card-size"><%= game.game_size %> -a-side </p>
+      <p class="dashboard-card-host"> Host: <%= game.user.first_name %></p>
+      <%= link_to 'CHAT', chatroom_path(game.chatroom.id) %>
+       <p class="view-gmshosted">VIEW</p>
+      <%= link_to 'LEAVE GAME', game_player_path(game.id, current_user.id), data: { turbo_method: :delete }  %>
+    </div>
+  <% end %>
+</div>
+
+<div class="dashboard-card">
+  <h2 class = "dashboard-title-hosted">Games hosted</h1>
+  <% @hosted_games.each do |game| %>
+    <div>
+      <p class="dashboard-card-location"><%= game.location %></p>
+      <%= link_to 'CHAT', chatroom_path(game.chatroom.id) %>
+      <p class="view-gmshosted">VIEW</p>
+    </div>
+  <% end %>
+</div>
