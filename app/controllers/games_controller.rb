@@ -10,7 +10,7 @@ class GamesController < ApplicationController
   end
 
   def show
-    @games = Game.find(params[:id])
+    @game = Game.find(params[:id])
   end
 
   def new
@@ -20,6 +20,7 @@ class GamesController < ApplicationController
   def create
     @game = Game.new(game_params)
     @game.user = current_user
+    @game.game_size = params["game"]["game_size"].split("-")[0].to_i * 2
     if @game.save!
       @chatroom = Chatroom.new
       @chatroom.game = @game
@@ -28,6 +29,10 @@ class GamesController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
+  end
+
+  def formation
+    @game = Game.find(params[:id])
   end
 
   private
