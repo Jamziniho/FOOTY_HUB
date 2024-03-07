@@ -1,6 +1,12 @@
 class GamesController < ApplicationController
   def index
+    @games_count = Game.count
+    results_per_page = 5
     @games = Game.all
+    page = params[:page].nil? ? 0 : params[:page].to_i
+    p page
+    @games = Game.limit(results_per_page).offset(results_per_page * page)
+    p @games
   end
 
   def show
