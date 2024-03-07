@@ -1,0 +1,4 @@
+<h1>test</h1>
+<% @game.players.where({team: 1}).each do |player| %>
+<p><%= player %></p>
+<% end %>
