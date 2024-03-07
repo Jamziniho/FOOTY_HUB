@@ -1,15 +1,20 @@
 <div class="sign-up-container">
-<h1>Your profile</h1>
+  <h1>Your profile</h1>
 
-<%# user display pic %>
-<%= cl_image_tag current_user.photo.key, height: 300, width: 400, crop: :fill %>
 
-<%= current_user.first_name %>
-<%= current_user.last_name %>
-<%#= current_user.age %>
-<%= current_user.email %>
-<%= current_user.matches_won %>
-<%= current_user.matches_lost %>
-<%=  current_user.preferred_position%>
+    <%# user display pic %>
+    <%= cl_image_tag current_user.photo.key, height: 300, width: 400, crop: :fill %>
+
+    <%= current_user.first_name %>
+    <%= current_user.last_name %>
+
+      <%= current_user.matches_won %>
+
+
+    <%= current_user.preferred_position %>
+
+    <%= current_user.email %>
+
+    <%= current_user.matches_lost %>
 
 </div>

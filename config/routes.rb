@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   resources :games do
     resources :players
   end
+  get "games/:id/formation", to: "games#formation", as: :formation
   # Defines the root path route ("/")
   # root "posts#index"
   get "profile", to: "pages#profile"
@@ -17,5 +18,4 @@ Rails.application.routes.draw do
   resources :chatrooms, only: :show do
     resources :messages, only: :create
   end
-
 end
