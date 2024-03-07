@@ -10,7 +10,9 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
-    <%= yield %>
+  <body class="d-flex flex-column min-vh-100">
+    <div class="flex-grow-1">
+      <%= yield %>
+    </div>
   </body>
 </html>
