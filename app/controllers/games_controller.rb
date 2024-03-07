@@ -1,7 +1,7 @@
 class GamesController < ApplicationController
   def index
     @games_count = Game.count
-    results_per_page = 5
+    results_per_page = 4
     @games = Game.all
     page = params[:page].nil? ? 0 : params[:page].to_i
     p page

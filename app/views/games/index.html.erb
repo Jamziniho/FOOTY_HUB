@@ -1,12 +1,10 @@
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap">
-
 <div class="index-background-img h-100" style="background-image: url('<%= asset_path('background-img.jpg') %>');">
       <div class="index-title">
         <h1 class= "index-headerone d-flex justify-content-center" > FOOTY<span class="hub">HUB</span> </h1>
       </div>
 
     <div class="row justify-content-center searchbar m-0">
-      <div class="col-sm-8 my-3">
+      <div class="col-sm-8 ">
         <%= form_with url: games_path, method: :get, class: "d-flex index-search" do %>
           <%= text_field_tag :query,
                 params[:query],
@@ -28,11 +26,11 @@
             <div class="game-card">
               <div class="game-card-body d-flex justify-content-between">
                 <!-- Car image column -->
-                <div class="col-md-10 car-div d-flex">
+                <div class="col-md-10 car-div d-flex ">
                     <div class="description-title">
                       <h5 class="game-card-title"><%= "#{game.location}" %></h5>
-                      <h4 class="game-card-date"><%= "#{game.date}" %></h4>
-                      <h4 class="game-card-host"><%= "#{game.user.first_name}" %></h4>
+                      <h4 class="game-card-date"><%= "#{game.date.strftime("%m-%e-%y %H:%M")}" %></h4>
+                      <h4 class="game-card-host"><%= "Host: #{game.user.first_name}" %></h4>
                       <div class="d-flex">
                         <p class="p1"><%= "#{game.game_size}-a-side"%></p>
                       </div>
@@ -40,7 +38,7 @@
                     <div class="col-md-2 d-flex justify-content-end">
                       <div class="text-end game-price">
                         <p class="price-text">£<%= "#{game.price.round} / player" %></p>
-                        <%= link_to "Join game",game_path(game), class: "btn-fcard" %>
+                        <%= link_to "Select",game_path(game), class: "btn-fcard" %>
                       </div>
                     </div>
                 </div>
@@ -50,6 +48,6 @@
         <% end %>
       </div>
       <div>
-      <%= link_to "Next", games_path(page: params[:page].nil? ? 1 : params[:page].to_i + 1 ) %>
+      <%= link_to "Next", games_path(page: params[:page].nil? ? 1 : params[:page].to_i + 1 ), class: "next" %>
   </div>
 </div>
