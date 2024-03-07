@@ -1,18 +1,27 @@
 .host-title {
   color: #004129;
-  font-size: xx-large;
+  font-size: 43px;
   font-weight: 900;
   margin-top: 12px;
-  margin-left: 25%;
+  text-align: center;
 }
 .form-label {
   color:#C11E1E;
   margin-left: 25px;
 }
+.new-date{
+  color:#C11E1E;
+}
+
+.new-game-form {
+  margin: 0px 40px 0px 40px;
+}
 .form-control {
+  display: flex;
   width: 100%;
   padding: 8px 12px;
   font-weight: 350;
+  font-size: small;
   line-height: 1;
   border-bottom-color: #C11E1E;
   border-top: none;
