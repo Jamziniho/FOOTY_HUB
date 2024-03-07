@@ -1,16 +1,16 @@
-<h1>Join @host.name's Game</h1>
+<h1><%="Join #{@game.user.first_name}'s Game"%></h1>
 <ul>
-<li>Game Size: <%= @games.game_size %>-a-side</li>
-<li>Date & Time: <%= @games.date %></li>
-<li>Location: <%= @games.location %></li>
-<li>Price Per Player: £<%= @games.price %></li>
-<li>Gender: <%= @games.gender %></li>
+<li>Game Size: <%= @game.game_size %>-a-side</li>
+<li>Date & Time: <%= @game.date %></li>
+<li>Location: <%= @game.location %></li>
+<li>Price Per Player: £<%= @game.price %></li>
+<li>Gender: <%= @game.gender %></li>
 </ul>
 
 <p>Additional Info:</p>
-<p><%= @games.description %></p>
-<% if @games.players.where({user_id: current_user.id}).length === 0 %>
-  <%= link_to "Join Game", game_players_path(@games), data: { turbo_method: :post } %>
+<p><%= @game.description %></p>
+<% if @game.players.where({user_id: current_user.id}).length === 0 %>
+  <%= link_to "Join Game", game_players_path(@game), data: { turbo_method: :post } %>
 <% else %>
   <p style="font-size: 20px;">Joined</p>
 <% end %>
