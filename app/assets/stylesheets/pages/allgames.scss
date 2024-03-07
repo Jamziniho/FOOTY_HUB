@@ -14,6 +14,7 @@
 }
 
 .index-headerone{
+  padding: 10px;
   font-size: 50px;
   font-weight: bold;
   font-family:'Kanit', sans-serif;
@@ -21,27 +22,65 @@
 }
 
 .index-headertwo{
+  padding: 15px;
   font-size: 25px;
   font-weight: 700px;
-  font-family:'Kanit', sans-serif;
-  padding-left: 10px;
 }
 .indexcards{
   color:#fff;
   font-weight:600;
-  background-color: rgba(255, 255, 255, 0.85);
-  width: 400px;
+  width: 385px;
   border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.85);
+  padding: 30px 12px ;
 }
+
 
 .game-card {
   background-color: rgba(0, 65, 41, 0.9);
+  padding: 10px;
+  height:160px ;
+  margin-bottom: 25px;
+  border-radius: 10px;
 }
 
-.next{
+.nav-button-container {
+  margin-top: 20px;
+  display: flex;
+  gap: 25px;
+}
+
+.next, .prev{
+  padding: 10px;
+  i {
+    color: white;
+  }
+}
+
+
+
+.selectbtn{
   text-decoration: none;
   background-color: white;
-  color:black;
-  width: 10px;
-  border-radius: 10px;
+  color: rgba(0, 65, 41, 0.9);
+  color: rgb(194, 31, 31);
+  padding: 5px;
+  border-radius: 3px;
+
+}
+
+.search-bar{
+  width: 385px;
+  border-radius: 15px;
+  height: 50px;
+}
+
+.game-card-date, .game-card-host, .game-card-size{
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.game-card-title, .game-card-date, .game-card-host, .game-card-size{
+  padding-top: 5px;
+  padding-top: 5px;
 }
