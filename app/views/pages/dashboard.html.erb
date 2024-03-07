@@ -1,0 +1,14 @@
+<h1>games joined</h1>
+<% @joined_games.each do |game| %>
+  <div>
+    <p><%= game.location %></p>
+    <%= link_to 'Chat', chatroom_path(game.chatroom.id) %>
+  </div>
+<% end %>
+<h1>games hosted</h1>
+<% @hosted_games.each do |game| %>
+  <div>
+    <p><%= game.location %></p>
+    <%= link_to 'Chat', chatroom_path(game.chatroom.id) %>
+  </div>
+<% end %>
