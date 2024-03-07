@@ -48,15 +48,15 @@
               <% end %>
             </div>
           <% end %>
-        </div>
-      </div>
-      <div class="nav-button-container">
+            <div class="nav-button-container">
         <%= link_to games_path(page: params[:page].nil? ? 1 : params[:page].to_i - 1 ), class: "prev" do %>
           <i class="fa-solid fa-circle-left fa-2xl"></i>
         <% end %>
         <%= link_to games_path(page: params[:page].nil? ? 1 : params[:page].to_i + 1 ), class: "next" do %>
           <i class="fa-solid fa-circle-right fa-2xl"></i>
         <% end %>
+      </div>
+        </div>
       </div>
 </div>
 
