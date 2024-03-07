@@ -1,0 +1,24 @@
+.background-img-show{
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 130px;
+}
+
+.join-game-btn{
+  background-color: 004129;
+}
+
+.wholeshowpage{
+  margin: 20px;
+  padding: 20px;
+  border: 2px solid #c11e1e;
+  border-radius: 10px;
+}
+.show-card-date, .show-card-location, .show-card-description{
+  color: #C11E1E;
+
+}

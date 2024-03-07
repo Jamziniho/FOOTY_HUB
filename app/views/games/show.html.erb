@@ -1,16 +1,19 @@
-<h1><%="Join #{@game.user.first_name}'s Game"%></h1>
-<ul>
-<li>Game Size: <%= @game.game_size %>-a-side</li>
-<li>Date & Time: <%= @game.date %></li>
-<li>Location: <%= @game.location %></li>
-<li>Price Per Player: £<%= @game.price %></li>
-<li>Gender: <%= @game.gender %></li>
-</ul>
+<div class="background-img-show" style="background-image: url('<%= asset_path('ball.jpg') %>');">
+</div>
 
-<p>Additional Info:</p>
-<p><%= @game.description %></p>
-<% if @game.players.where({user_id: current_user.id}).length === 0 %>
-  <%= link_to "Join Game", game_players_path(@game), data: { turbo_method: :post } %>
-<% else %>
-  <p style="font-size: 20px;">Joined</p>
-<% end %>
+<div class="wholeshowpage">
+  <h5 class="show-card-date"> <%= @game.date.strftime("%m-%e-%y %H:%M")%></h5>
+  <h5 class="show-card-location"> <%= @game.location %></h5>
+  <h5 class="show-card-host"><%="By #{@game.user.first_name}"%></h5>
+  <h5 class="show-card-size">Game Size <%= @game.game_size %>-a-side</h5>
+  <h5 class="show-card-price"> £<%= @game.price.round %></h5>
+  <h5 class="show-card-gender">Gender <%= @game.gender %></h5>
+
+  <p class="show-card-description"><%= "Description: #{@game.description} "%></p>
+
+  <% if @game.players.where({user_id: current_user.id}).length === 0 %>
+    <%= link_to "Join Game", game_players_path(@game), class: "join-game-btn", data: { turbo_method: :post } %>
+  <% else %>
+    <p style="font-size: 20px;">Joined</p>
+  <% end %>
+</div>
