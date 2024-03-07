@@ -1,13 +1,31 @@
 <div class="container">
 <h1>Your profile</h1>
 
+<% if current_user %>
 <%= current_user.first_name %>
+  <% end %>
+
+  <% if current_user %>
 <%= current_user.last_name %>
-<%#= current_user.age %>
+  <% end %>
+
+  <% if current_user %>
 <%= current_user.matches_won %>
-<%=  current_user.preferred_position%>
+  <% end %>
+
+<%#= current_user.age %>
+ <% if current_user %>
+<%= current_user.preferred_position %>
+  <% end %>
+
+  <% if current_user %>
 <%= current_user.email %>
+  <% end %>
+
+<% if current_user %>
 <%= current_user.matches_lost %>
+  <% end %>
+
 
 
 </div>

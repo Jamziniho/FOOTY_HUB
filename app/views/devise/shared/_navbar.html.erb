@@ -1,13 +1,21 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
 
-  <%= link_to root_path, class: "navbar-brand" do %>
+  <%= link_to games_path, class: "navbar-brand" do %>
     <i class="fa fa-fw fa-home"></i>
   <% end %>
 
-  <a href="#"><i class="fa fa-fw fa-plus"></i></a>
-  <a href="#"><i class="fa fa-fw fa-futbol"></i></a>
-  <a href="#"><i class="fa fa-fw fa-user"></i></a>
+  <%= link_to new_game_path, class: "navbar-brand" do %>
+    <i class="fa fa-fw fa-plus"></i>
+  <% end %>
+
+  <%= link_to dashboard_path, class: "navbar-brand" do %>
+    <i class="fa fa-fw fa-futbol"></i>
+  <% end %>
+
+  <%= link_to profile_path, class: "navbar-brand" do %>
+    <i class="fa fa-fw fa-user"></i>
+  <% end %>
 
 <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
