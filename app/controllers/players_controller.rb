@@ -1,10 +1,10 @@
 class PlayersController < ApplicationController
   def create
-    @player = Player.new(player_params)
+    @player = Player.new
     @player.user = current_user
-    @player.game = @game
+    @player.game = Game.find(params[:game_id])
     if @player.save
-      redirect_to player_path(@player)
+      redirect_to dashboard_path
     else
       render :new, status: :unprocessable_entity
     end
@@ -25,11 +25,5 @@ class PlayersController < ApplicationController
     else
       render :edit
     end
-  end
-
-  private
-
-  def player_params
-    params.require(:player).permit(:game, :user)
   end
 end
