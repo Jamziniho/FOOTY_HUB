@@ -3,6 +3,7 @@
   <div>
     <p><%= game.location %></p>
     <%= link_to 'Chat', chatroom_path(game.chatroom.id) %>
+    <%= link_to 'Leave Game', game_player_path(game.id, current_user.id), data: { turbo_method: :delete }  %>
   </div>
 <% end %>
 <h1>games hosted</h1>
