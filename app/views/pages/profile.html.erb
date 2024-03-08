@@ -1,26 +1,15 @@
 <div class="sign-up-container">
-  <h1>Your profile</h1>
-
-
-    <%#user display pic %>
     <% if current_user.photo.attached? %>
       <%= cl_image_tag current_user.photo.key, height: 300, width: 400, crop: :fill %>
     <% else %>
-      <%= image_tag "avatar.png", height: 300, width: 400, crop: :fill %>
+      <%= image_tag "avatar.png", height: 300, width: 400, crop: :fill, input_html: { class: "profile-avatar" }%>
     <% end %>
-
-
-
-    <%= current_user.first_name %>
-    <%= current_user.last_name %>
-
-      <%= current_user.matches_won %>
-
-
-    <%= current_user.preferred_position %>
-
-    <%= current_user.email %>
-
-    <%= current_user.matches_lost %>
-
+    <div class="profile-info">
+     <%= current_user.first_name %>
+     <%= current_user.last_name %>
+     <%= current_user.matches_won %>
+     <%= current_user.preferred_position %>
+     <%= current_user.email %>
+     <%= current_user.matches_lost %>
+    </div>
 </div>
