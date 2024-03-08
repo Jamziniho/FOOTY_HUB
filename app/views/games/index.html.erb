@@ -8,16 +8,18 @@
         <%= form_with url: games_path, method: :get, class: "d-flex index-search search-bar" do %>
           <%= text_field_tag :query,
                 params[:query],
-                class: "form-control",
+                class: " type-loc form-control",
                 placeholder: "Type a location"
             %>
-          <%= submit_tag "Search" , name: "", class: " btn-fcard" %>
+          <%= button_tag "Search" , name: "", class: " search-btn btn-fcard px-3" do%>
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <% end %>
         <% end %>
       </div>
     </div>
 
     <div class="heading-container">
-      <h1 class="index-headertwo"> Available: <small class="results-count"><%= @games.count %> Games</small></h1>
+      <h1 class="index-headertwo"> Available Games: <small class="results-count"><%#= @games.count Games%></small></h1>
     </div>
       <div class="card-container">
         <div class="row full-games-card h-100 m-0 indexcards">
@@ -48,8 +50,10 @@
             </div>
           <% end %>
             <div class="nav-button-container">
-        <%= link_to games_path(page: params[:page].nil? ? 1 : params[:page].to_i - 1 ), class: "prev" do %>
-          <i class="fa-solid fa-circle-left fa-2xl"></i>
+        <% if params[:page].to_i > 1 %>
+          <%= link_to games_path(page: params[:page].nil? ? 1 : params[:page].to_i - 1 ), class: "prev" do %>
+            <i class="fa-solid fa-circle-left fa-2xl"></i>
+          <% end %>
         <% end %>
         <%= link_to games_path(page: params[:page].nil? ? 1 : params[:page].to_i + 1 ), class: "next" do %>
           <i class="fa-solid fa-circle-right fa-2xl"></i>
