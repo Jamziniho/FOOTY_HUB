@@ -1,12 +1,14 @@
 class GamesController < ApplicationController
   def index
-    @games_count = Game.count
     results_per_page = 3
-    @games = Game.all
     page = params[:page].nil? ? 0 : params[:page].to_i
-    p page
-    @games = Game.limit(results_per_page).offset(results_per_page * page)
-    p @games
+    if params[:query].present?
+      @games = Game.search_by_game_size_and_level(params[:query]).limit(results_per_page).offset(results_per_page * page)
+      @games_count = @games.count
+    else
+      @games = Game.all.limit(results_per_page).offset(results_per_page * page)
+      @games_count = @games.count
+    end
   end
 
   def show

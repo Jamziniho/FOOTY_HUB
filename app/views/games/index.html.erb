@@ -34,6 +34,7 @@
                           <h5 class="game-card-host"><%= "Host: #{game.user.first_name}" %></h5>
                           <div class="d-flex">
                             <h5 class="game-card-size"><%= "#{game.game_size}-a-side"%></h5>
+                            <h5 class="game-card-size"><%= "#{game.level}"%></h5>
                           </div>
                         </div>
                         <div class="col-md-2 d-flex justify-content-end">
@@ -59,3 +60,9 @@
         </div>
       </div>
 </div>
+
+<style>
+  body {
+    overflow: hidden;
+  }
+</style>
