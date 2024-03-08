@@ -2,8 +2,12 @@
   data-controller="chatroom-subscription"
   data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>"
   >
-  <h1>#<%= @chatroom.game.location %></h1>
-  <h1>By <%= @chatroom.game.user.first_name %></h1>
+  <%= link_to dashboard_path, class: "backshowcr" do %>
+  <i class="fa-solid fa-arrow-left fa-2xl arrow-show" style="color: #004129;"></i>
+<% end %>
+  <h1 class="locnmchatroom">#<%= @chatroom.game.location %></h1>
+
+  <h1 class="hostnmchatroom"><%= @chatroom.game.user.first_name %>'s Chatroom</h1>
 
 
   <div class="messages" data-chatroom-subscription-target="messages">
@@ -15,11 +19,19 @@
   <%= simple_form_for [@chatroom, @message],
   html: {class: "d-flex"} do |f|
 %>
-  <%= f.input :content,
-    label: false,
-    placeholder: "Message ##{@chatroom.game.user.first_name}'s Chat",
-    wrapper_html: {class: "flex-grow-1"}
-  %>
-  <%= f.submit "Send", class: "btn btn-primary mb-3" %>
+  <div class="message-form-container">
+    <%= f.input :content,
+      label: false,
+      placeholder: "Send a message",
+      wrapper_html: {class: "flex-grow-1 input-group"},
+      input_html: {
+        class: "flex-grow-1"
+      }
+
+    %>
+    <button type='submit' class="btn-submit">
+      <i class="fa-solid fa-paper-plane fa-xl" style="color: #ffffff;"></i>
+    </button>
+</div>
 <% end %>
 </div>
