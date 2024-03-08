@@ -3,13 +3,22 @@
   font-weight:200;
   font-size: 36px;
   padding-right: 160px;
+  background-color: #ffffff;
+  border-radius: 8px;
+
 }
 
-.dashboard-card {
-  background-color: black;
+.dashboard-hosted-card, .dashboard-joined-card {
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 5px 10px #ffffff;
   padding: 20px;
   margin-bottom: 20px;
 }
 
+.dashboard-joined-card {
+  background-color: rgba(0, 65, 41, 0.9);
+}
+
+.dashboard-hosted-card {
+  background-color: rgba(194, 31, 31, 0.9);
+}

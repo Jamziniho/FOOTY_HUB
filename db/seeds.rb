@@ -19,14 +19,14 @@ Message.destroy_all
 puts "Creating User..."
 user_1 = User.create!(first_name: "Tori", last_name: "Evans", email: "test1@test.com", password: "123456", preferred_position: "Offensive", level: "Casual", age: 18 )
 user_2 = User.create!(first_name: "Abdul", last_name: "Omar", email: "test2@test.com", password: "123456", preferred_position: "Offensive", level: "Advanced", age: 24 )
-user_3 = User.create!(first_name: "Guy", last_name: "Mcdonalds", email: "test3@test.com", password: "123456", preferred_position: "Defensive", level: "Intermediate", age: 22 )
+user_3 = User.create!(first_name: "Guy", last_name: "Mcdonalds", email: "test3@test.com", password: "123456", preferred_position: "Defensive", level: "Decent", age: 22 )
 user_4 = User.create!(first_name: "Jamal", last_name: "Abubakari", email: "test4@test.com", password: "123456", preferred_position: "Offensive", level: "Advanced", age: 35 )
 user_5 = User.create!(first_name: "Soukaina", last_name: "Guezour", email: "test5@test.com", password: "123456", preferred_position: "Offensive", level: "Amateur", age: 36 )
 user_6 = User.create!(first_name: "Elizabeth", last_name: "Ojambo", email: "test6@test.com", password: "123456", preferred_position: "Offensive", level: "Advanced", age: 27 )
 user_7 = User.create!(first_name: "Akash", last_name: "Zaveri", email: "test7@test.com", password: "123456", preferred_position: "Defensive", level: "Casual", age: 29 )
 user_8 = User.create!(first_name: "Deji", last_name: "Hastrup", email: "test8@test.com", password: "123456", preferred_position: "Offensive", level: "Advanced", age: 23 )
 user_9 = User.create!(first_name: "Louise", last_name: "Stone", email: "test9@test.com", password: "123456", preferred_position: "Offensive", level: "Casual", age: 21 )
-user_10 = User.create!(first_name: "Cy", last_name: "Porteous", email: "test10@test.com", password: "123456", preferred_position: "Defensive", level: "Intermediate", age: 18 )
+user_10 = User.create!(first_name: "Cy", last_name: "Porteous", email: "test10@test.com", password: "123456", preferred_position: "Defensive", level: "Decent", age: 18 )
 puts "User created!"
 
 puts "Creating games with chatrooms..."
@@ -36,7 +36,7 @@ game_1.user = user_1
 game_1.save!
 Chatroom.create!(game: game_1)
 
-game_2 = Game.new(price: 5.0, game_size: 7, date: DateTime.parse("2024/04/05 13:00"), location: "King Solomon Academy", description: "60mins game, arrive 10-15mins before kick off, no shouting and no aggressive behaviour, Respect Host decision, 4G artificial pitch. AG boots or astro ok. Team colour: Please bring both a light and dark top with you to help splitting the teams at the pitch", gender: "Male", level: " Intermediate", completed: false)
+game_2 = Game.new(price: 5.0, game_size: 7, date: DateTime.parse("2024/04/05 13:00"), location: "King Solomon Academy", description: "60mins game, arrive 10-15mins before kick off, no shouting and no aggressive behaviour, Respect Host decision, 4G artificial pitch. AG boots or astro ok. Team colour: Please bring both a light and dark top with you to help splitting the teams at the pitch", gender: "Male", level: " Decent", completed: false)
 game_2.user = user_2
 game_2.save!
 Chatroom.create!(game: game_2)
@@ -52,7 +52,7 @@ game_4.save!
 Chatroom.create!(game: game_4)
 
 game_5 = Game.new(price: 7.5, game_size: 5, date: DateTime.parse("2024/04/09 13:00"), location: "Powerleague, Shoreditch
-", description: "Closest train station is Shoredtch, people who turn up late might lose their spot. 3G artificial grass surface, outdoors, covered pitch. Everyone must play fair, respect their oppenents and fellow players. Fresh bibs will be provided ", gender: "Any", level: "Intermediate", completed: false)
+", description: "Closest train station is Shoredtch, people who turn up late might lose their spot. 3G artificial grass surface, outdoors, covered pitch. Everyone must play fair, respect their oppenents and fellow players. Fresh bibs will be provided ", gender: "Any", level: "Decent", completed: false)
 game_5.user = user_5
 game_5.save!
 Chatroom.create!(game: game_5)
@@ -77,7 +77,7 @@ game_9.user = user_9
 game_9.save!
 Chatroom.create!(game: game_9)
 
-game_10 = Game.new(price: 5.15, game_size: 7, date: DateTime.parse("2024/04/06 16:00"), location: "Horfield Leisure", description: "Game on!!✔️🔥 Let's make sure that we arrive early with both dark and light coloured tops, so we can sort teams out quickly and make the most of our playing time! Enjoy!", gender: "Any", level: "Intermediate", completed: false)
+game_10 = Game.new(price: 5.15, game_size: 7, date: DateTime.parse("2024/04/06 16:00"), location: "Horfield Leisure", description: "Game on!!✔️🔥 Let's make sure that we arrive early with both dark and light coloured tops, so we can sort teams out quickly and make the most of our playing time! Enjoy!", gender: "Any", level: "Decent", completed: false)
 game_10.user = user_10
 game_10.save!
 Chatroom.create!(game: game_10)
