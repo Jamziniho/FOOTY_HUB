@@ -1,26 +1,30 @@
-<div class="sign-up-container">
-  <h1>Your profile</h1>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
-
-    <%#user display pic %>
+  <div class="background-profile" style="background-image: url('<%= asset_path('profilebackground.png') %>');">
     <% if current_user.photo.attached? %>
-      <%= cl_image_tag current_user.photo.key, height: 300, width: 400, crop: :fill %>
+      <%= cl_image_tag current_user.photo.key, class: "profile-img" %>
     <% else %>
-      <%= image_tag "avatar.png", height: 300, width: 400, crop: :fill %>
+      <%= image_tag "avatar.png", class: "profile-img" %>
     <% end %>
+  </div>
+  <div class="profile-form">
+   <form action="/update_user_info" method="post">
+  <label for="first_name"><i class="fas fa-user"></i> First Name:</label>
+  <input type="text" id="first_name" name="first_name" value="<%= current_user.first_name %>"><br>
 
+  <label for="last_name"><i class="fas fa-user"></i> Last Name:</label>
+  <input type="text" id="last_name" name="last_name" value="<%= current_user.last_name %>"><br>
 
+  <label for="preferred_position"><i class="fas fa-futbol"></i> Preferred Position:</label>
+  <input type="text" id="preferred_position" name="preferred_position" value="<%= current_user.preferred_position %>"><br>
 
-    <%= current_user.first_name %>
-    <%= current_user.last_name %>
+  <label for="email"><i class="fas fa-envelope"></i> Email:</label>
+  <input type="text" id="email" name="email" value="<%= current_user.email %>"><br>
 
-      <%= current_user.matches_won %>
+  <label for="matches_won"><i class="fas fa-trophy"></i> Matches Won:</label>
+  <input type="text" id="matches_won" name="matches_won" value="<%= current_user.matches_won %>"><br>
 
-
-    <%= current_user.preferred_position %>
-
-    <%= current_user.email %>
-
-    <%= current_user.matches_lost %>
-
+  <label for="matches_lost"><i class="fas fa-exclamation-circle"></i> Matches Lost:</label>
+  <input type="text" id="matches_lost" name="matches_lost" value="<%= current_user.matches_lost %>"><br>
+</form>
 </div>
