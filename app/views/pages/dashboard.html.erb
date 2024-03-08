@@ -1,31 +1,42 @@
 <div class="index-background-img h-100" style="background-image: url('<%= asset_path('background-img.jpg') %>');">
 <div class="index-title">
-  <h1 class= "index-headerone d-flex justify-content-center" > FOOTY<span class="hub">HUB</span> </h1>
+  <h1 class= "dashboard-headerone d-flex justify-content-center" > FOOTY<span class="hub">HUB</span> </h1>
 </div>
 
 <h1 class= "dashboard-title">YOUR GAMES</h1>
 
-<div class="dashboard-joined-card">
-  <h2 class = "dashboard-title-joined">Games joined</h1>
-  <% @joined_games.each do |game| %>
-    <div>
-      <p class="dashboard-card-location"><%= "#{game.location}" %></p>
-      <p class="dashboard-card-size"><%= "#{game.game_size}" %> -a-side </p>
-      <p class="dashboard-card-host"> <%= "#{game.user.first_name}" %></p>
-      <%= link_to 'CHAT', chatroom_path(game.chatroom.id) %>
-      <%= link_to 'INFO', game_path(game) %>
-      <%= link_to 'LEAVE GAME', game_player_path(game.id, current_user.id), data: { turbo_method: :delete }  %>
+<div class ="dashboard-card-container">
+  <h2 class = "dashboard-title-joined w-100">Games joined</h1>
+  <div class="dashboard-joined-card ">
+    <% @joined_games.each do |game| %>
+    <div class="both-dash-cards">
+        <div>
+          <p class="dashboard-card-location"><%= "#{game.location}" %></p>
+          <p class="dashboard-card-size"><%= "#{game.game_size}" %> -a-side </p>
+          <p class="dashboard-card-host"> <i class="fa-regular fa-user host-icon" style="color: #ffffff;"></i><%= "#{game.user.first_name}" %></p>
+        </div>
+        <div class="text-end dashboard-btns">
+          <%= link_to 'CHAT', chatroom_path(game.chatroom.id), class: 'common-button-class cbc-red' %>
+          <%= link_to 'INFO', game_path(game), class: 'common-button-class cbc-red' %>
+          <%= link_to 'LEAVE ', game_player_path(game.id, current_user.id), class: 'common-button-class cbc-red', data: { turbo_method: :delete } %>
+        </div>
     </div>
-  <% end %>
+    <% end %>
+  </div>
 </div>
 
-<div class="dashboard-hosted-card">
-  <h2 class = "dashboard-title-hosted">Games hosted</h1>
-  <% @hosted_games.each do |game| %>
-    <div>
-      <p class="dashboard-card-location"><%= "#{game.location}" %></p>
-      <%= link_to 'CHAT', chatroom_path(game.chatroom.id) %>
-      <p class="view-gmshosted">VIEW</p>
+<div class ="dashboard-card-container-hosted">
+  <h2 class = "dashboard-title-hosted w-100">Games hosted</h1>
+    <% @hosted_games.each do |game| %>
+      <div class="dashboard-hosted-card d-flex align-items-center">
+      <div>
+        <p class="dashboard-card-location"><%= "#{game.location}" %></p>
+        <p class="dashboard-card-location"><%= "#{game.date.strftime("%m-%e-%y %H:%M")}" %></p>
+      </div>
+        <div class="text-end dashboard-btns">
+          <%= link_to 'CHAT', chatroom_path(game.chatroom.id), class: 'common-button-class cbc-green'%>
+          <a class="view-gmshosted common-button-class cbc-green">VIEW </a>
+        </div>
     </div>
   <% end %>
 </div>

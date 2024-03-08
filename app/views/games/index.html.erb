@@ -35,7 +35,7 @@
                           <h5 class="game-card-date"><%= "#{game.date.strftime("%m-%e-%y %H:%M")}" %></h5>
                           <h5 class="game-card-host"> <i class="fa-regular fa-user host-icon" style="color: #ffffff;"></i><%= "#{game.user.first_name}" %></h5>
                         </div>
-
+                      
                         <%# <div class="d-flex justify-content-end"> %>
                           <div class="text-end game-price" style="max-width: 90px;">
                             <h5 class="price-text">£<%= "#{game.price.round} / pp" %></h5>
