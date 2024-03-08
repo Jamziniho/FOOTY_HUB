@@ -10,9 +10,9 @@ class Game < ApplicationRecord
 
   # has_one_attached :photo
 
-  include PgSearch::Model
-  pg_search_scope :search_by_game_size_and_level,
-  against: [ :game_size, :gender, :level ],
+ include PgSearch::Model
+pg_search_scope :search_by_game_size_and_level,
+  against: [:game_size, :level],
   using: {
     tsearch: { prefix: true } # <-- now `superman batm` will return something!
   }

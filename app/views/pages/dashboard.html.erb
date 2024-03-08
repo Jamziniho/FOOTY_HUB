@@ -5,25 +5,25 @@
 
 <h1 class= "dashboard-title">YOUR GAMES</h1>
 
-<div class="dashboard-card">
+<div class="dashboard-joined-card">
   <h2 class = "dashboard-title-joined">Games joined</h1>
   <% @joined_games.each do |game| %>
     <div>
-      <p class="dashboard-card-location"><%= game.location %></p>
-      <p class="dashboard-card-size"><%= game.game_size %> -a-side </p>
-      <p class="dashboard-card-host"> Host: <%= game.user.first_name %></p>
+      <p class="dashboard-card-location"><%= "#{game.location}" %></p>
+      <p class="dashboard-card-size"><%= "#{game.game_size}" %> -a-side </p>
+      <p class="dashboard-card-host"> <%= "#{game.user.first_name}" %></p>
       <%= link_to 'CHAT', chatroom_path(game.chatroom.id) %>
-       <p class="view-gmshosted">VIEW</p>
+      <%= link_to 'INFO', game_path(game) %>
       <%= link_to 'LEAVE GAME', game_player_path(game.id, current_user.id), data: { turbo_method: :delete }  %>
     </div>
   <% end %>
 </div>
 
-<div class="dashboard-card">
+<div class="dashboard-hosted-card">
   <h2 class = "dashboard-title-hosted">Games hosted</h1>
   <% @hosted_games.each do |game| %>
     <div>
-      <p class="dashboard-card-location"><%= game.location %></p>
+      <p class="dashboard-card-location"><%= "#{game.location}" %></p>
       <%= link_to 'CHAT', chatroom_path(game.chatroom.id) %>
       <p class="view-gmshosted">VIEW</p>
     </div>
