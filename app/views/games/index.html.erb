@@ -35,7 +35,7 @@
                           <h5 class="game-card-date"><%= "#{game.date.strftime("%m-%e-%y %H:%M")}" %></h5>
                           <h5 class="game-card-host"> <i class="fa-regular fa-user host-icon" style="color: #ffffff;"></i><%= "#{game.user.first_name}" %></h5>
                         </div>
-                      
+
                         <%# <div class="d-flex justify-content-end"> %>
                           <div class="text-end game-price" style="max-width: 90px;">
                             <h5 class="price-text">£<%= "#{game.price.round} / pp" %></h5>
@@ -50,13 +50,15 @@
             </div>
           <% end %>
             <div class="nav-button-container">
-        <% if params[:page].to_i > 1 %>
+        <% if params[:page].to_i > 0 %>
           <%= link_to games_path(page: params[:page].nil? ? 1 : params[:page].to_i - 1 ), class: "prev" do %>
             <i class="fa-solid fa-circle-left fa-2xl"></i>
           <% end %>
         <% end %>
+        <% if params[:page].to_i < (@games_count/3) %>
         <%= link_to games_path(page: params[:page].nil? ? 1 : params[:page].to_i + 1 ), class: "next" do %>
           <i class="fa-solid fa-circle-right fa-2xl"></i>
+        <% end %>
         <% end %>
       </div>
         </div>
