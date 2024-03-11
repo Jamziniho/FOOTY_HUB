@@ -1,11 +1,25 @@
 .chatroom {
-  background: white;
   margin-top: 9px;
   height: calc(100vh - 75px);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   flex-grow: 1;
+
+  .background-img-cr{
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    width: 100;
+    height: 520px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
 
   h1 {
     border-bottom: 1px solid $gray-200;
@@ -20,11 +34,14 @@
   .hostnmchatroom {
     color: rgb(0,65,41);
     font-size: 45px;
+    font-weight: 300;
+    font-style: italic;
   }
 
   .locnmchatroom {
     color: rgb(194,31,31);
-    font-size: 45px;
+    font-size: 42px;
+    font-weight: 600;
   }
 
   .btn-submit {
@@ -51,6 +68,8 @@
     box-shadow: 0px 0px 3px 2px rgba(0,0,0,.1); // DONT MOVE
     overflow: scroll; // DONT MOVE
     padding: 1rem;
+    background: rgba(255, 255, 255, 0.5);
+
   }
 
   #new_message {

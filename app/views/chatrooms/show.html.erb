@@ -1,7 +1,8 @@
 <div class="container chatroom"
   data-controller="chatroom-subscription"
   data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>"
-  >
+  data-chatroom-subscription-current-user-id-value="<%= current_user.id %>">
+
   <%= link_to dashboard_path, class: "backshowcr" do %>
   <i class="fa-solid fa-arrow-left fa-2xl arrow-show" style="color: #004129;"></i>
 <% end %>
@@ -9,15 +10,20 @@
 
   <h1 class="hostnmchatroom"><%= @chatroom.game.user.first_name %>'s Chatroom</h1>
 
-
+<div class="background-img-cr" style="background-image: url('<%= asset_path('background-img.jpg') %>');">
   <div class="messages" data-chatroom-subscription-target="messages">
     <% @chatroom.messages.each do |message| %>
-    <%= render "messages/message", message: message %>
-    <% end %>
+  <div class="message-row d-flex <%= message.sender?(current_user) ? 'justify-content-end' : 'justify-content-start' %>">
+    <div class="<%= message.sender?(current_user) ? 'sender-style' : 'receiver-style' %>">
+      <%= render "messages/message", message: message %>
+    </div>
+  </div>
+<% end %>
+  </div>
   </div>
 
   <%= simple_form_for [@chatroom, @message],
-  html: {class: "d-flex"} do |f|
+  html: { data: { action: "turbo:submit-end->chatroom-subscription#resetForm" } , class: "d-flex"} do |f|
 %>
   <div class="message-form-container">
     <%= f.input :content,
