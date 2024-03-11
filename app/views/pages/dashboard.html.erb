@@ -5,7 +5,7 @@
 
 <h1 class= "dashboard-title">YOUR GAMES</h1>
 
-<div class ="dashboard-card-container">
+<div class ="dashboard-card-container" style="height: 400px; overflow-y: auto;">
   <h2 class = "dashboard-title-joined w-100">Games joined</h2>
   <div class="dashboard-joined-card ">
     <% @joined_games.each do |game| %>
@@ -25,7 +25,7 @@
   </div>
   </div>
 
-<div class ="dashboard-card-container-hosted">
+<div class ="dashboard-card-container-hosted" style="height: 300px; overflow-y: auto;">
   <h2 class = "dashboard-title-hosted w-100">Games hosted</h2>
     <% @hosted_games.each do |game| %>
       <div class="dashboard-hosted-card d-flex align-items-center">
@@ -41,7 +41,7 @@
   <% end %>
 
 </div>
-
+</div>
 <style>
   body {
     overflow: hidden;
@@ -49,4 +49,3 @@
 </style>
   </div>
   </div>
-
