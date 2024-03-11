@@ -18,9 +18,13 @@
   <div class="description-card">
     <p class="show-card-description"><%= "Description: #{@game.description} "%></p>
   </div>
+  <% spacesLeft = (@game.game_size * 2) - @game.players.length %>
+  <% if spacesLeft > 0 %>
+    <p><%= spacesLeft %> spaces left</p>
+  <% end %>
 
   <% if @game.players.where({user_id: current_user.id}).length === 0 %>
-    <%= link_to "Join Game", game_players_path(@game), class: "join-game-btn", data: { turbo_method: :post } %>
+    <%= link_to spacesLeft > 0 ? "Join Game" : "Game Full", game_players_path(@game), class: "join-game-btn", data: { turbo_method: :post }, style: "pointer-events: #{spacesLeft > 0 ? "all" : "none"}" %>
   <% else %>
     <p class="joined"style="font-size: 20px;">Joined</p>
   <% end %>

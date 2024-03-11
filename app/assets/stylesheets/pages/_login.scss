@@ -1,4 +1,4 @@
-.signup {
+.login {
   height: 100svh;
   overflow: hidden;
   .home-title {
@@ -40,9 +40,16 @@
     overflow-y: scroll;
     padding: 20px;
     margin: 0 auto;
+    padding-top: 100px;
     .form-label {
       color:#C11E1E;
       margin-left: 25px;
+    }
+    .user_remember_me{
+      color: #C11E1E;
+    }
+    .remember{
+      border: #004129 solid 0.5px;
     }
     .form-control {
       display: flex;
@@ -53,6 +60,9 @@
       line-height: 1;
       border-bottom-color: #C11E1E;
       border-top: none;
+    }
+    .form-actions{
+      padding-top: 45px;
     }
     .form-select {
       border-top: none;
