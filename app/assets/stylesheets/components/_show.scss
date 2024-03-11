@@ -33,8 +33,7 @@
 
 .joined{
   color:#004129;
-  font-weight: 500;
-  padding-top: 10px;
+  font-weight: 600;
 }
 
 .wholeshowpage{
@@ -64,10 +63,15 @@
   justify-content: center;
   border-radius: 8px;
 }
+.space{
+  color: #004129;
+  padding-top: 10px;
+}
 .show-card-container {
   display: flex;
   margin-bottom: 16px;
   gap: 15px;
+  color: #004129;
 }
 .show-card-description{
   font-size: 20px ;
