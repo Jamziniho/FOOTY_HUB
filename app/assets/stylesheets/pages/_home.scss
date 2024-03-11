@@ -24,13 +24,15 @@
 
 .home-paragraph{
   padding-left: 102px;
-  font-size: 22px;
+  font-size: 28px;
   font-weight:700;
-  opacity: 0.71;
+  opacity: 0.76;
+  margin-left: 27px;
+
 }
 
 .headerone{
-  font-size: 50px;
+  font-size: 67px;
   font-weight: bold;
 }
 
@@ -48,7 +50,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 55px;
+  margin-bottom: 20px;
 }
 
 .common-button-class{
@@ -59,21 +61,28 @@
   color: #C11E1E;
   padding: 3px;
   font-weight: 500;
+
 }
 
 .button-primary {
-  background-color: #ffffff;
+  background-color: #ffffffd9;
   color: #c11e1e;
   border: none;
-  border-radius: 5px;
+  border-radius: 15px;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 30px;
   font-weight: bold;
   text-decoration: none;
-  margin-right: 15px;
-  padding: 10px;
+  gap: 22px;
+  padding: 8px;
+  padding-left: 25px;
+  padding-right:25px ;
+  margin-bottom: 35px;
 }
 
+.log-in{
+  margin-right: 20px;
+}
 .button-primary:hover {
   background-color: #c11e1e;
   color: #ffffff;
