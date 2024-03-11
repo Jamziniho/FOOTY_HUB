@@ -27,6 +27,16 @@ user_7 = User.create!(first_name: "Akash", last_name: "Zaveri", email: "test7@te
 user_8 = User.create!(first_name: "Deji", last_name: "Hastrup", email: "test8@test.com", password: "123456", preferred_position: "Offensive", level: "Advanced", age: 23 )
 user_9 = User.create!(first_name: "Louise", last_name: "Stone", email: "test9@test.com", password: "123456", preferred_position: "Offensive", level: "Casual", age: 21 )
 user_10 = User.create!(first_name: "Cy", last_name: "Porteous", email: "test10@test.com", password: "123456", preferred_position: "Defensive", level: "Decent", age: 18 )
+user_11 = User.create!(first_name: "Marco", last_name: "Ricci", email: "test11@test.com", password: "123456", preferred_position: "Defensive", level: "Casual", age: 20 )
+user_12 = User.create!(first_name: "John", last_name: "Madden", email: "test12@test.com", password: "123456", preferred_position: "Offensive", level: "Advanced", age: 25 )
+user_13 = User.create!(first_name: "Alex", last_name: "Katz", email: "test13@test.com", password: "123456", preferred_position: "Defensive", level: "Decent", age: 28 )
+user_14 = User.create!(first_name: "Sophie", last_name: "Elrod", email: "test14@test.com", password: "123456", preferred_position: "Defensive", level: "Amateur", age: 40 )
+user_15 = User.create!(first_name: "Will", last_name: "Caddel", email: "test15@test.com", password: "123456", preferred_position: "Offensive", level: "Casual", age: 23 )
+user_16 = User.create!(first_name: "Grace", last_name: "Barlowe", email: "test16@test.com", password: "123456", preferred_position: "Defensive", level: "Decent", age: 29 )
+user_17 = User.create!(first_name: "Tom", last_name: "Hart", email: "test17@test.com", password: "123456", preferred_position: "Offensive", level: "Amateur", age: 33 )
+user_18 = User.create!(first_name: "Lucien", last_name: "Laurier", email: "test18@test.com", password: "123456", preferred_position: "Offensive", level: "Advanced", age: 23 )
+user_19 = User.create!(first_name: "Ema", last_name: "Hansley", email: "test19@test.com", password: "123456", preferred_position: "Defensive", level: "Decent", age: 34 )
+user_20 = User.create!(first_name: "Megan", last_name: "Raven", email: "test20@test.com", password: "123456", preferred_position: "Offensive", level: "Decent", age: 25 )
 puts "User created!"
 
 puts "Creating games with chatrooms..."
