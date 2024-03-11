@@ -29,9 +29,10 @@
     // border: 1px solid #ccc;
     border-radius: 5px;
   }
-  form label {
+  form label, h3  {
     position: relative;
     display: flex;
+    font-size: 18px;
     column-gap: 10px;
     align-items: center;
     margin-bottom: 10px;
@@ -54,10 +55,15 @@
     width: calc(100% - 20px);
     padding: 8px;
     margin-bottom: 15px;
-    border: 1px solid #ccc;
-    background: rgba(0,0,0,.05);
+    outline: none;
+    border: none;
     border-radius: 5px;
-
+    pointer-events: none;
+    &.editable {
+      pointer-events: all;
+      border: 1px solid #ccc;
+      background: rgba(0,0,0,.05);
+    }
   }
 
 

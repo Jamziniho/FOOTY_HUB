@@ -13,9 +13,6 @@
   color:#C11E1E;
 }
 
-.new-game-form {
-  margin: 0px 40px 0px 40px;
-}
 .form-control {
   display: flex;
   width: 100%;
@@ -40,14 +37,19 @@
 
 }
 
-.background-img-host{
+.background-img-new{
   background-size: cover;
   margin: 0;
   padding: 0;
   width: 100%;
-  height: 100%;
-  display: flex-start;
   flex-direction: column;
   justify-content: space-between;
-  height: 240px;
+  height: 130px;
+  position: relative;
+}
+.allpage{
+  margin: 27px;
+  padding: 25px;
+  border: 2px solid #c11e1e;
+  border-radius: 10px;
 }

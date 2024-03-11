@@ -1,18 +1,24 @@
 
-<div class="background-img-host" style="background-image: url('<%= asset_path('ball.jpg') %>');">
+<div class="background-img-new" style="background-image: url('<%= asset_path('ball.jpg') %>');">
+
+
 </div>
 
 <h1 class= "host-title">HOST A GAME</h1>
-
-<div class="new-game-form">
-  <%= simple_form_for @game do |f| %>
-    <%= f.input :location %>
-    <%= f.input :date, html5: true, input_html: { class: "new-date" } %>
-    <%= f.input :game_size, collection: ["5-a-side", "7-a-side", "9-a-side", "11-a-side"] %>
-    <%= f.input :level, collection: ["Amatuer", "Casual", "Intermediate", "Advanced", "Any"] %>
-    <%= f.input :price %>
-    <%= f.input :description %>
-    <%= f.submit "Confirm", class: "btn btn-primary" %>
-  <% end %>
-</div>
-
+  <div class="allpage">
+    <div class="new-game-form">
+    <div class="form-input">
+      <%= simple_form_for @game do |f| %>
+        <%= f.input :location %>
+        <%= f.input :date, html5: true, input_html: { class: "new-date" } %>
+        <%= f.input :game_size, collection: ["5-a-side", "7-a-side", "9-a-side", "11-a-side"] %>
+        <%= f.input :level, collection: ["Amatuer", "Casual", "Intermediate", "Advanced", "Any"] %>
+        <%= f.input :price %>
+        <%= f.input :description %>
+        <%= f.submit "Confirm", class: "btn btn-primary" %>
+        <%= link_to dashboard_path, class: "confirm-btn" do %>
+    <% end %>
+      <% end %>
+      </div>
+    </div>
+  </div>
