@@ -1,7 +1,9 @@
 <div class="profile-container" data-controller='profile' data-profile-token-value="<%= form_authenticity_token%>">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-
     <div class="background-profile" style="background-image: url('<%= asset_path('profilebackground.png') %>');">
+      <%= link_to destroy_user_session_path, data: {turbo_method: :delete}, class:"logout" do %>
+       <i class="fa-solid fa-right-from-bracket fa-2xl" style="color: #ffffff;"></i>
+      <% end %>
       <% if @user.photo.attached? %>
         <%= cl_image_tag @user.photo.key, class: "profile-img" %>
       <% else %>
@@ -41,7 +43,6 @@
       Save changes
     </button>
   </form>
-
 
   </div>
 </div>
