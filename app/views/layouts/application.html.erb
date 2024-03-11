@@ -13,7 +13,7 @@
   <body class="d-flex flex-column min-vh-100">
     <div class="flex-grow-1">
       <%= yield %>
-      <%= render "devise/shared/navbar" %>
+      <%= render "devise/shared/navbar" unless root_path %>
     </div>
   </body>
 </html>
