@@ -5,35 +5,38 @@
   margin-top: 12px;
   text-align: center;
 }
-.form-label {
-  color:#C11E1E;
-  margin-left: 25px;
-}
+
 .new-date{
   color:#C11E1E;
 }
+.new-game-form {
+  .form-label {
+    color:#C11E1E;
+    margin-left: 25px;
+  }
+  .form-control {
+    display: flex;
+    width: 100%;
+    padding: 8px 12px;
+    font-weight: 350;
+    font-size: small;
+    line-height: 1;
+    border-bottom-color: #C11E1E;
+    border-top: none;
+  }
+  .form-select {
+    border-top: none;
+    border-bottom-color: #C11E1E;
+  }
+  .btn {
+    background-color: #004129;
+    color: white;
+    font-weight: bold;
+    margin-left: 20%;
+    width: 60%;
+    border-radius: 10px;
 
-.form-control {
-  display: flex;
-  width: 100%;
-  padding: 8px 12px;
-  font-weight: 350;
-  font-size: small;
-  line-height: 1;
-  border-bottom-color: #C11E1E;
-  border-top: none;
-}
-.form-select {
-  border-top: none;
-  border-bottom-color: #C11E1E;
-}
-.btn {
-  background-color: #004129;
-  color: white;
-  font-weight: bold;
-  margin-left: 20%;
-  width: 60%;
-  border-radius: 10px;
+  }
 
 }
 
