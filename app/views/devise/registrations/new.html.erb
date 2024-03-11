@@ -1,64 +1,61 @@
-<div class="background-img" style="background-image: url('<%= asset_path('sign-up.png') %>');">
+<div class="signup">
+  <div class="home-title">
+    <img src="<%= asset_path('greenback.png') %>" alt="" class='background'>
+    <div>
+    <%= link_to root_path, class: "backshow" do %>
+    <i class="fa-solid fa-arrow-left fa-2xl arrow-show" style="color: #ffffff;"></i>
+      <% end %>
+      <h1>FOOTY<span class="hub">HUB</span> </h1>
+      <h2 >Create<br>Account</h2>
+    </div>
+  </div>
 
-<div class="home-title">
-  <h1 class= "headerone" > FOOTY<span class="hub">HUB</span> </h1>
-</div>
-
-<h2 class= "log-in-p"> Create Account </h2>
-
-<div class="sign-up-forms">
-    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-      <%= f.error_notification %>
-      <div class="form-inputs">
-      <div class="row m-0">
-        <div class="col-6">
+      <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= f.error_notification %>
+        <div class="form-inputs">
           <%= f.input :first_name,
                       required: true,
                       autofocus: true,
                       input_html: { autocomplete: "first_name" }%>
-        </div>
-        <div class="col-6">
           <%= f.input :last_name,
+                        required: true,
+                        autofocus: true,
+                        input_html: { autocomplete: "last_name" }%>
+          <%= f.input :email,
                       required: true,
                       autofocus: true,
-                      input_html: { autocomplete: "last_name" }%>
+                      input_html: { autocomplete: "email" }%>
+
+          <%= f.input :level, collection: ["Amatuer" , "Casual", "Intermediate" , "Advanced"],
+                      required: true,
+                      autofocus: true,
+                      input_html: { autocomplete: "level" }%>
+
+          <%= f.input :age,
+                      required: true,
+                      autofocus: true,
+                      input_html: { autocomplete: "age" }%>
+
+          <%= f.input :position, collection: ["Offensive" , "Defensive"],
+                      required: true,
+                      autofocus: true,
+                      input_html: { autocomplete: "position" }%>
+
+          <%= f.input :password,
+                      required: true,
+                      hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                      input_html: { autocomplete: "new-password" } %>
+          <%= f.input :password_confirmation,
+                      required: true,
+                      input_html: { autocomplete: "new-password" } %>
+
+          <%= f.input :photo, as: :file %>
         </div>
-      </div>
-        <%= f.input :email,
-                    required: true,
-                    autofocus: true,
-                    input_html: { autocomplete: "email" }%>
 
-        <%= f.input :level, collection: ["Amatuer" , "Casual", "Intermediate" , "Advanced"],
-                    required: true,
-                    autofocus: true,
-                    input_html: { autocomplete: "level" }%>
+        <div class="form-actions">
+          <%= f.button :submit, "Sign up" %>
+        </div>
+      <% end %>
 
-        <%= f.input :age,
-                    required: true,
-                    autofocus: true,
-                    input_html: { autocomplete: "age" }%>
-
-        <%= f.input :position, collection: ["Offensive" , "Defensive"],
-                    required: true,
-                    autofocus: true,
-                    input_html: { autocomplete: "position" }%>
-
-        <%= f.input :password,
-                    required: true,
-                    hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                    input_html: { autocomplete: "new-password" } %>
-        <%= f.input :password_confirmation,
-                    required: true,
-                    input_html: { autocomplete: "new-password" } %>
-
-        <%= f.input :photo, as: :file %>
-      </div>
-
-      <div class="form-actions">
-        <%= f.button :submit, "Sign up" %>
-      </div>
-    <% end %>
-
-    <%= render "devise/shared/links" %>
+      <%= render "devise/shared/links" %>
 </div>
