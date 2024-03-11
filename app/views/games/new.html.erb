@@ -14,6 +14,7 @@
         <%= f.input :game_size, collection: ["5-a-side", "7-a-side", "9-a-side", "11-a-side"] %>
         <%= f.input :level, collection: ["Amatuer", "Casual", "Intermediate", "Advanced", "Any"] %>
         <%= f.input :price %>
+        <%= f.input :gender, collection: ["Male", "Female", "Any"]%>
         <%= f.input :description %>
         <%= f.submit "Confirm", class: "btn btn-primary" %>
         <%= link_to dashboard_path, class: "confirm-btn" do %>
@@ -22,3 +23,9 @@
       </div>
     </div>
   </div>
+
+<%# <style>
+  body {
+    overflow: hidden;
+  }
+</style> %>
