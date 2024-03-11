@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
   get "profile", to: "pages#profile"
+  patch "profile", to: "users#updateProfile"
   get "dashboard", to: "pages#dashboard"
 
   resources :chatrooms, only: :show do
