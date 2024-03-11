@@ -1,32 +1,47 @@
-<div class="profile-container">
+<div class="profile-container" data-controller='profile' data-profile-token-value="<%= form_authenticity_token%>">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
     <div class="background-profile" style="background-image: url('<%= asset_path('profilebackground.png') %>');">
-      <% if current_user.photo.attached? %>
-        <%= cl_image_tag current_user.photo.key, class: "profile-img" %>
+      <% if @user.photo.attached? %>
+        <%= cl_image_tag @user.photo.key, class: "profile-img" %>
       <% else %>
         <%= image_tag "avatar.png", class: "profile-img" %>
       <% end %>
     </div>
     <div class="profile-form">
-    <form action="/update_user_info" method="post">
+    <form data-action="submit->profile#submit">
     <label for="first_name"><i class="fas fa-user"></i> First Name:</label>
-    <input type="text" id="first_name" name="first_name" value="<%= current_user.first_name %>"><br>
+    <input data-profile-target='input' type="text" id="first_name" name="first_name" value="<%= @user.first_name %>"><br>
 
     <label for="last_name"><i class="fas fa-user"></i> Last Name:</label>
-    <input type="text" id="last_name" name="last_name" value="<%= current_user.last_name %>"><br>
+    <input data-profile-target='input' type="text" id="last_name" name="last_name" value="<%= @user.last_name %>"><br>
 
     <label for="preferred_position"><i class="fas fa-futbol"></i> Preferred Position:</label>
-    <input type="text" id="preferred_position" name="preferred_position" value="<%= current_user.preferred_position %>"><br>
+    <input data-profile-target='input' type="text" id="preferred_position" name="preferred_position" value="<%= @user.preferred_position %>"><br>
 
     <label for="email"><i class="fas fa-envelope"></i> Email:</label>
-    <input type="text" id="email" name="email" value="<%= current_user.email %>"><br>
+    <input data-profile-target='input' type="text" id="email" name="email" value="<%= @user.email %>"><br>
 
-    <label for="matches_won"><i class="fas fa-trophy"></i> Matches Won:</label>
-    <input type="text" id="matches_won" name="matches_won" value="<%= current_user.matches_won %>"><br>
+    <h3 for="matches_won"><i class="fas fa-trophy"></i> Matches Won:</h3>
+    <input type="text" value="<%= @user.matches_won %>4">
 
-    <label for="matches_lost"><i class="fas fa-exclamation-circle"></i> Matches Lost:</label>
-    <input type="text" id="matches_lost" name="matches_lost" value="<%= current_user.matches_lost %>"><br>
+    <h3 for="matches_lost"><i class="fas fa-exclamation-circle"></i> Matches Lost:</h3>
+    <input type="text" value="<%= @user.matches_lost %>3">
+
+    <button type='button'
+            class='btn btn-success'
+            data-action='click->profile#editMode'
+            data-profile-target='edit'>
+      Edit
+    </button>
+
+    <button type='submit'
+            class='btn btn-success d-none'
+            data-profile-target='submit'>
+      Save changes
+    </button>
   </form>
+
+
   </div>
 </div>
