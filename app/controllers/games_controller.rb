@@ -4,10 +4,10 @@ class GamesController < ApplicationController
     page = params[:page].nil? ? 0 : params[:page].to_i
     if params[:query].present?
       @games = Game.search_by_game_size_and_level(params[:query]).limit(results_per_page).offset(results_per_page * page)
-      @games_count = @games.count
+      @games_count = Game.search_by_game_size_and_level(params[:query]).count
     else
       @games = Game.all.limit(results_per_page).offset(results_per_page * page)
-      @games_count = @games.count
+      @games_count = Game.all.count
     end
   end
 
