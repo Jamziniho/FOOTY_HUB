@@ -1,4 +1,44 @@
-<h1>test</h1>
-<% @game.players.where({team: 1}).each do |player| %>
-<p><%= player %></p>
+<div class="background-img-show" style="background-image: url('<%= asset_path('ball.jpg') %>');">
+<%= link_to dashboard_path, class: "backshow" do %>
+  <i class="fa-solid fa-arrow-left fa-2xl arrow-show" style="color: #ffffff;"></i>
 <% end %>
+</div>
+
+<div class="ftpage">
+
+
+  <div class="formation-title">
+    <h1 class= "dashboard-headerone d-flex justify-content-center" > LINE UPS</span> </h1>
+  </div>
+
+    <div class="container">
+      <div class="team1">
+          <div class="banner1">
+          <h1>Team 1</h1>
+          </div>
+
+          <div class="lineups">
+          <ul>
+          <% @game.players.where({team: 1}).each do |player| %>
+          <li> <p class="nameformation"><%= player.user.first_name %></p> </li>
+          <% end %>
+          </ul>
+          </div>
+      </div>
+
+        <div class="team2">
+            <div class="banner2">
+            <h1>Team 2</h1>
+            </div>
+
+            <div class="lineups">
+            <ul>
+            <% @game.players.where({team: 2}).each do |player| %>
+            <li><p class="nameformation"><%= player.user.first_name %></p></li>
+            <% end %>
+            <ul>
+          </div>
+      </div>
+
+    </div>
+</div>

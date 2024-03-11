@@ -1,0 +1,43 @@
+.ftpage{
+
+
+  .banner1, .banner2 {
+  background-color: rgb(191, 31, 31);
+  color: white;
+  font-size: 38px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 75px;
+  border-radius: 40px;
+  width: 100%; /* Full width */
+  text-align: center;
+
+  }
+
+  .nameformation {
+    padding-top: 5px;
+    font-size: 20px;
+  }
+
+  .lineups{
+    padding: 10px;
+  }
+
+  .container {
+    display: flex;
+    justify-content: space-around;
+    border: 2px solid #c11e1e;
+  }
+
+  .team1, .team2 {
+    width: 150px;
+  }
+
+
+  .dashboard-headerone{
+    gap: 10px;
+    font-size: 60px ;
+    color: rgb(0, 65, 41);
+  }
+}
