@@ -39,6 +39,15 @@
   }
 
 }
+.inline-inputs {
+  display: flex;
+  justify-content: center;
+}
+
+.form-group {
+  margin-right: 10px;
+  width: 50%;
+}
 
 .background-img-new{
   background-size: cover;
