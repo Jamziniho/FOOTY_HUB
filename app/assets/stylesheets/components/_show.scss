@@ -29,6 +29,7 @@
   justify-content: center;
   margin-top: 35px;
   font-size: 20px;
+  width: 100%;
 }
 
 .joined{
@@ -127,12 +128,12 @@
 }
 .icondiv{
   display: flex;
-  margin-left: 150px;
   gap: 30px;
 }
 
 .joineddivshow {
   display: flex;
+  justify-content: flex-end;
 }
 
 // .dooricon, .chaticon{

@@ -1,4 +1,5 @@
 <div class="background-img-show" style="background-image: url('<%= asset_path('ball.jpg') %>');">
+<% joined = @game.players.where({user_id: current_user.id}).length > 0 %>
 <%= link_to games_path, class: "backshow" do %>
   <i class="fa-solid fa-arrow-left fa-2xl arrow-show" style="color: #FFFFFF;"></i>
 <% end %>
@@ -13,7 +14,7 @@
 </ul>
 <div class="tab-content" id="pills-tabContent">
   <div class="tab-pane fade show active" id="pills-info" role="tabpanel" aria-labelledby="pills-info-tab" tabindex="0">
-      <div class="wholeshowpage">
+      <div class="wholeshowpage" data-controller="game" data-game-id-value="<%= @game.id %>" data-game-token-value="<%= form_authenticity_token %>">
       <h5 class="show-card-date"> <%= @game.date.strftime("%m-%e-%y %H:%M")%></h5>
       <h5 class="show-card-location"> <i class="fa-solid fa-location-dot fa-lg" style="color: #00422A;"></i> <%= @game.location %></h5>
       <h5 class="show-card-host"><%="By #{@game.user.first_name}"%></h5>
@@ -29,22 +30,22 @@
       <% spacesLeft = (@game.game_size * 2) - @game.players.length %>
       <% if spacesLeft > 0 %>
         <p class="space"><%= spacesLeft %> spaces left</p>
-    <% end %>
-      <% if @game.players.where({user_id: current_user.id}).length === 0 %>
-        <%= link_to spacesLeft > 0 ? "Join Game" : "Game Full", game_players_path(@game), class: "join-game-btn", data: { turbo_method: :post }, style: "pointer-events: #{spacesLeft > 0 ? "all" : "none"}" %>
-      <% else %>
-        <div class="joineddivshow">
-          <p class="joined"style="font-size: 20px;">Joined</p>
+      <% end %>
+        <p class="joined <%= joined ? '' : 'd-none'%>" style="font-size: 20px;" data-game-target='joinedNotice'>Joined</p>
+      <% if !joined %>
+        <button class="join-game-btn" style="pointer-events: <%= spacesLeft > 0 ? "all" : "none" %>" data-action="click->game#join" data-game-target="button"> <%= spacesLeft > 0 ? "Join Game" : "Game Full" %></button>
+      <% end %>
+
+      <div class="joineddivshow <%= joined ? "" : "d-none" %>" data-game-target='joinedButtons'>
         <div class = "icondiv">
             <%= link_to chatroom_path(@game.chatroom.id), class: 'chaticon' do %>
             <i class="fas fa-comment fa-xl" style="color: #004129;"></i>
-            <% end %>
+              <% end %>
             <%= link_to game_player_path(@game.id, current_user.id), class: 'dooricon', data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to leave the game?" } do %>
-            <i class="fa-solid fa-door-open fa-xl" style="color: #004129;"></i>
-          <% end %>
+              <i class="fa-solid fa-door-open fa-xl" style="color: #004129;"></i>
+            <% end %>
         </div>
-        </div>
-      <% end %>
+      </div>
     </div>
   </div>
   <div class="tab-pane fade" id="pills-lineup" role="tabpanel" aria-labelledby="pills-lineup-tab" tabindex="0"></div>
