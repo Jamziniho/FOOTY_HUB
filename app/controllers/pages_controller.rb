@@ -15,6 +15,6 @@ class PagesController < ApplicationController
 
   def dashboard
     @joined_games = current_user.games.filter { |game| game.user_id != current_user.id }
-    @hosted_games = current_user.games.filter { |game| game.user_id == current_user.id }
+    @hosted_games = Game.where(user_id: current_user.id)
   end
 end
