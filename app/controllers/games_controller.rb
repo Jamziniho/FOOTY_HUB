@@ -22,7 +22,8 @@ class GamesController < ApplicationController
   def create
     @game = Game.new(game_params)
     @game.user = current_user
-    @game.game_size = params["game"]["game_size"].split("-")[0].to_i * 2
+    Player.create(team: 1, user: current_user, game: @game)
+    @game.game_size = params["game"]["game_size"].split("-")[0].to_i
     if @game.save!
       @chatroom = Chatroom.new
       @chatroom.game = @game
