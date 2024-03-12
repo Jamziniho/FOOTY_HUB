@@ -25,7 +25,7 @@ class PlayersController < ApplicationController
     user_id = params[:id].to_i
     player = game.players.find { |p| p.user_id == user_id }
     player.destroy
-    # redirect_to dashboard_path, status: :see_other
+    redirect_to game_path(game), status: :see_other
   end
 
   def update
