@@ -32,14 +32,14 @@
       <% if spacesLeft > 0 %>
         <p class="space"><%= spacesLeft %> spaces left</p>
     <% end %>
-
-      <% if @game.players.where({user_id: current_user.id}).length === 0 %>
+        
+        <% if @game.players.where({user_id: current_user.id}).length === 0 %>
         <%= link_to spacesLeft > 0 ? "Join Game" : "Game Full", game_players_path(@game), class: "join-game-btn", data: { turbo_method: :post }, style: "pointer-events: #{spacesLeft > 0 ? "all" : "none"}" %>
       <% else %>
         <p class="joined"style="font-size: 20px;">Joined</p>
       <% end %>
     </div>
   </div>
-  <div class="tab-pane fade" id="pills-lineup" role="tabpanel" aria-labelledby="pills-lineup-tab" tabindex="0">...</div>
-    add line up info here
+  <div class="tab-pane fade" id="pills-lineup" role="tabpanel" aria-labelledby="pills-lineup-tab" tabindex="0"></div>
+    <%= render 'formation', game: @game %>
 </div>
