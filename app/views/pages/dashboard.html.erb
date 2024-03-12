@@ -6,63 +6,34 @@
 <h1 class= "dashboard-title">YOUR GAMES</h1>
 
 <div class ="dashboard-card-container" style="height: 300px; overflow-y: auto;">
-  <h2 class = "dashboard-title-joined w-100">Games joined</h2>
-  <div class="dashboard-joined-card ">
+  <h2 class = "dashboard-title-joined w-100">Upcoming games</h2>
     <% @joined_games.each do |game| %>
-    <div class="both-dash-cards">
-        <div>
-          <p class="dashboard-card-location"><%= "#{game.location}" %></p>
-          <p class="dashboard-card-size"><%= "#{game.game_size}" %> -a-side </p>
-          <p class="dashboard-card-host"> <i class="fa-regular fa-user host-icon" style="color: #ffffff;"></i><%= "#{game.user.first_name}" %></p>
+    <%= link_to game_path(game) do  %>
+      <div class="dashboard-joined-card ">
+        <div class="both-dash-cards">
+            <div>
+              <p class="dashboard-card-location"><%= "#{game.location}" %></p>
+              <p class="dashboard-card-size"><%= "#{game.game_size}" %> -a-side </p>
+              <p class="dashboard-card-host"> <i class="fa-regular fa-user host-icon" style="color: #ffffff;"></i><%= "#{game.user.first_name}" %></p>
+            </div>
         </div>
-        <div class="text-end dashboard-btns">
-          <%= link_to 'CHAT', chatroom_path(game.chatroom.id), class: 'common-button-class cbc-red' %>
-          <%= link_to 'INFO', game_path(game), class: 'common-button-class cbc-red' %>
-          <%= link_to 'LEAVE ', game_player_path(game.id, current_user.id), class: 'common-button-class cbc-red', data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to leave the game?" } %>
-
-
-          <%#=Creating modal to enable pop up for confirmation before leaving game  %>
-
-          <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalCenterTitle">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
       </div>
-      <div class="modal-body">
-          </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
+      <% end %>
+    <% end %>
 </div>
 
-        </div>
-    </div>
-    <% end %>
-  </div>
-  </div>
-
 <div class ="dashboard-card-container-hosted" style="height: 300px; overflow-y: auto;">
-  <h2 class = "dashboard-title-hosted w-100">Games hosted</h2>
-    <% @hosted_games.each do |game| %>
-      <div class="dashboard-hosted-card d-flex align-items-center">
+  <h2 class = "dashboard-title-hosted w-100">My games</h2>
+  <% @hosted_games.each do |game| %>
+    <div class="dashboard-hosted-card d-flex align-items-center">
       <div>
         <p class="dashboard-card-location"><%= "#{game.location}" %></p>
         <p class="dashboard-card-location"><%= "#{game.date.strftime("%m-%e-%y %H:%M")}" %></p>
       </div>
-        <div class="text-end dashboard-btns">
-          <%= link_to 'CHAT', chatroom_path(game.chatroom.id), class: 'common-button-class cbc-green'%>
-          <a class="view-gmshosted common-button-class cbc-green">VIEW </a>
-        </div>
+
+      </div>
     </div>
   <% end %>
-
 </div>
 </div>
 <style>

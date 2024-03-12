@@ -1,9 +1,8 @@
 <div class="background-img-show" style="background-image: url('<%= asset_path('ball.jpg') %>');">
 <%= link_to games_path, class: "backshow" do %>
-  <i class="fa-solid fa-arrow-left fa-2xl arrow-show" style="color: #ffffff;"></i>
+  <i class="fa-solid fa-arrow-left fa-2xl arrow-show" style="color: #FFFFFF;"></i>
 <% end %>
 </div>
-
 <ul class="nav nav-pills mb-3 togglecontainer" id="pills-tab" role="tablist">
   <li class="nav-item" role="presentation">
     <button class="nav-link active togglebtn" id="pills-info-tab"  data-bs-toggle="pill" data-bs-target="#pills-info" type="button" role="tab" aria-controls="pills-info" aria-selected="true">Info</button>
@@ -16,7 +15,7 @@
   <div class="tab-pane fade show active" id="pills-info" role="tabpanel" aria-labelledby="pills-info-tab" tabindex="0">
       <div class="wholeshowpage">
       <h5 class="show-card-date"> <%= @game.date.strftime("%m-%e-%y %H:%M")%></h5>
-      <h5 class="show-card-location"> <i class="fa-solid fa-location-dot fa-lg" style="color: #00422a;"></i> <%= @game.location %></h5>
+      <h5 class="show-card-location"> <i class="fa-solid fa-location-dot fa-lg" style="color: #00422A;"></i> <%= @game.location %></h5>
       <h5 class="show-card-host"><%="By #{@game.user.first_name}"%></h5>
         <div class="show-card-container">
           <div class ="shwcard"> <h5 class="show-card-size"><span class="redheader">Game Size</span> <%= @game.game_size %>-a-side</h5></div>
@@ -24,7 +23,6 @@
           <div class ="shwcard"> <h5 class="show-card-gender"><span class="redheader">Gender</span> <%= @game.gender %></h5></div>
         </div>
       <h5 class="show-card-price"> £<%= @game.price.round %></h5>
-
       <div class="description-card">
         <p class="show-card-description"><%= " #{@game.description} "%></p>
       </div>
@@ -32,7 +30,6 @@
       <% if spacesLeft > 0 %>
         <p class="space"><%= spacesLeft %> spaces left</p>
     <% end %>
-
       <% if @game.players.where({user_id: current_user.id}).length === 0 %>
         <%= link_to spacesLeft > 0 ? "Join Game" : "Game Full", game_players_path(@game), class: "join-game-btn", data: { turbo_method: :post }, style: "pointer-events: #{spacesLeft > 0 ? "all" : "none"}" %>
       <% else %>
@@ -43,3 +40,7 @@
   <div class="tab-pane fade" id="pills-lineup" role="tabpanel" aria-labelledby="pills-lineup-tab" tabindex="0"></div>
     <%= render 'formation', game: @game %>
 </div>
+
+
+
+

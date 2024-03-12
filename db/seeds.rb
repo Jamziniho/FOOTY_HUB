@@ -7,6 +7,7 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+require 'open-uri'
 
 puts "Cleaning database..."
 Chatroom.destroy_all
@@ -17,27 +18,67 @@ User.destroy_all
 Message.destroy_all
 
 puts "Creating User..."
-user_1 = User.create!(first_name: "Tori", last_name: "Evans", email: "test1@test.com", password: "123456", preferred_position: "Offensive", level: "Casual", age: 18 )
-user_2 = User.create!(first_name: "Abdul", last_name: "Omar", email: "test2@test.com", password: "123456", preferred_position: "Offensive", level: "Advanced", age: 24 )
-user_3 = User.create!(first_name: "Guy", last_name: "Mcdonalds", email: "test3@test.com", password: "123456", preferred_position: "Defensive", level: "Decent", age: 22 )
+user_1 = User.create!(first_name: "Tori", last_name: "Evans", email: "test2@test.com", password: "123456", preferred_position: "Offensive", level: "Casual", age: 24 )
+user_2 = User.create!(first_name: "Abdul", last_name: "Omar", email: "test1@test.com", password: "123456", preferred_position: "Offensive", level: "Advanced", age: 18 )
+user_3 = User.create!(first_name: "Will", last_name: "Neve", email: "test3@test.com", password: "123456", preferred_position: "Defensive", level: "Intermediate", age: 22 )
 user_4 = User.create!(first_name: "Jamal", last_name: "Abubakari", email: "test4@test.com", password: "123456", preferred_position: "Offensive", level: "Advanced", age: 35 )
 user_5 = User.create!(first_name: "Soukaina", last_name: "Guezour", email: "test5@test.com", password: "123456", preferred_position: "Offensive", level: "Amateur", age: 36 )
 user_6 = User.create!(first_name: "Elizabeth", last_name: "Ojambo", email: "test6@test.com", password: "123456", preferred_position: "Offensive", level: "Advanced", age: 27 )
-user_7 = User.create!(first_name: "Akash", last_name: "Zaveri", email: "test7@test.com", password: "123456", preferred_position: "Defensive", level: "Casual", age: 29 )
+user_7 = User.create!(first_name: "Marco", last_name: "Ricci", email: "test7@test.com", password: "123456", preferred_position: "Defensive", level: "Casual", age: 29 )
 user_8 = User.create!(first_name: "Deji", last_name: "Hastrup", email: "test8@test.com", password: "123456", preferred_position: "Offensive", level: "Advanced", age: 23 )
 user_9 = User.create!(first_name: "Louise", last_name: "Stone", email: "test9@test.com", password: "123456", preferred_position: "Offensive", level: "Casual", age: 21 )
-user_10 = User.create!(first_name: "Cy", last_name: "Porteous", email: "test10@test.com", password: "123456", preferred_position: "Defensive", level: "Decent", age: 18 )
-user_11 = User.create!(first_name: "Marco", last_name: "Ricci", email: "test11@test.com", password: "123456", preferred_position: "Defensive", level: "Casual", age: 20 )
-user_12 = User.create!(first_name: "John", last_name: "Madden", email: "test12@test.com", password: "123456", preferred_position: "Offensive", level: "Advanced", age: 25 )
-user_13 = User.create!(first_name: "Alex", last_name: "Katz", email: "test13@test.com", password: "123456", preferred_position: "Defensive", level: "Decent", age: 28 )
-user_14 = User.create!(first_name: "Sophie", last_name: "Elrod", email: "test14@test.com", password: "123456", preferred_position: "Defensive", level: "Amateur", age: 40 )
-user_15 = User.create!(first_name: "Will", last_name: "Caddel", email: "test15@test.com", password: "123456", preferred_position: "Offensive", level: "Casual", age: 23 )
-user_16 = User.create!(first_name: "Grace", last_name: "Barlowe", email: "test16@test.com", password: "123456", preferred_position: "Defensive", level: "Decent", age: 29 )
-user_17 = User.create!(first_name: "Tom", last_name: "Hart", email: "test17@test.com", password: "123456", preferred_position: "Offensive", level: "Amateur", age: 33 )
-user_18 = User.create!(first_name: "Lucien", last_name: "Laurier", email: "test18@test.com", password: "123456", preferred_position: "Offensive", level: "Advanced", age: 23 )
-user_19 = User.create!(first_name: "Ema", last_name: "Hansley", email: "test19@test.com", password: "123456", preferred_position: "Defensive", level: "Decent", age: 34 )
-user_20 = User.create!(first_name: "Megan", last_name: "Raven", email: "test20@test.com", password: "123456", preferred_position: "Offensive", level: "Decent", age: 25 )
+user_10 = User.create!(first_name: "Cy", last_name: "Porteous", email: "test10@test.com", password: "123456", preferred_position: "Defensive", level: "Intermediate", age: 18 )
+user_11 = User.create!(first_name: "Bukayo", last_name: "Saka", email: "test11@test.com", password: "123456", preferred_position: "Defensive", level: "Casual", age: 20 )
+user_12 = User.create!(first_name: "Cristiano", last_name: "Ronaldo", email: "test12@test.com", password: "123456", preferred_position: "Offensive", level: "Advanced", age: 25 )
+user_13 = User.create!(first_name: "Luiz", last_name: "Suarez", email: "test13@test.com", password: "123456", preferred_position: "Defensive", level: "Intermediate", age: 28 )
+user_14 = User.create!(first_name: "Thierry", last_name: "Henry", email: "test14@test.com", password: "123456", preferred_position: "Defensive", level: "Amateur", age: 40 )
+user_15 = User.create!(first_name: "Kylian", last_name: "Mbappe", email: "test15@test.com", password: "123456", preferred_position: "Offensive", level: "Casual", age: 23 )
+user_16 = User.create!(first_name: "William", last_name: "Saliba", email: "test16@test.com", password: "123456", preferred_position: "Defensive", level: "Intermediate", age: 29 )
+user_17 = User.create!(first_name: "Marcelo", last_name: "da Silva", email: "test17@test.com", password: "123456", preferred_position: "Offensive", level: "Amateur", age: 33 )
+user_18 = User.create!(first_name: "Martin", last_name: "Odegaard", email: "test18@test.com", password: "123456", preferred_position: "Offensive", level: "Advanced", age: 23 )
+user_19 = User.create!(first_name: "David", last_name: "Beckham", email: "test19@test.com", password: "123456", preferred_position: "Defensive", level: "Intermediate", age: 34 )
+user_20 = User.create!(first_name: "Trent", last_name: "A-Arnold", email: "test20@test.com", password: "123456", preferred_position: "Offensive", level: "Intermediate", age: 25 )
 puts "User created!"
+
+user_avatar11 = URI.open("https://www.coachesvoice.com/wp-content/uploads/2021/09/SakaMobile.jpg")
+user_11.photo.attach(io: user_avatar11, filename: 'Saka_pic', content_type: "image/jpeg")
+user_11.save!
+
+user_avatar12 = URI.open("https://w0.peakpx.com/wallpaper/259/635/HD-wallpaper-cristiano-ronaldo-closeup-cristiano-ronaldo-closeup-football-sports-cr7.jpg")
+user_12.photo.attach(io: user_avatar12, filename: 'Ronaldo_small', content_type: "image/jpeg")
+user_12.save!
+
+user_avatar13 = URI.open("https://i.pinimg.com/736x/4d/5e/ab/4d5eab775a2a72a20af5e76044962104.jpg")
+user_13.photo.attach(io: user_avatar13, filename: 'Saka_pic', content_type: "image/jpeg")
+user_13.save!
+
+user_avatar14 = URI.open("https://s.france24.com/media/display/8484ed96-4042-11ee-b936-005056a90284/w:1280/p:1x1/a874c291314b0b55b36b1ecda08a1d9eff46791b.jpg")
+user_14.photo.attach(io: user_avatar14, filename: 'Saka_pic', content_type: "image/jpeg")
+user_14.save!
+
+user_avatar15 = URI.open("https://cdn.theathletic.com/cdn-cgi/image/width=1200,height=1200,fit=cover/app/uploads/2023/06/13165232/GettyImages-1247139182-scaled-e1686689605877.jpg")
+user_15.photo.attach(io: user_avatar15, filename: 'Saka_pic', content_type: "image/jpeg")
+user_15.save!
+
+user_avatar16 = URI.open("https://www.thesun.co.uk/wp-content/uploads/2022/02/NINTCHDBPICT000695891630-1-e1645889426465.jpg?crop=694px%2C43px%2C3981px%2C2656px&resize=620%2C413")
+user_16.photo.attach(io: user_avatar16, filename: 'Saka_pic', content_type: "image/jpeg")
+user_16.save!
+
+user_avatar17 = URI.open("https://i.pinimg.com/474x/15/0f/22/150f22b1eb29ad12f0e772eb39a0f936.jpg")
+user_17.photo.attach(io: user_avatar17, filename: 'Saka_pic', content_type: "image/jpeg")
+user_17.save!
+
+user_avatar18 = URI.open("https://i.pinimg.com/736x/0c/b6/36/0cb636d8e7c6a4cb23d82ddf61c157e5.jpg")
+user_18.photo.attach(io: user_avatar18, filename: 'Saka_pic', content_type: "image/jpeg")
+user_18.save!
+
+user_avatar19 = URI.open("https://imgix.ranker.com/user_node_img/50041/1000800651/original/young-david-beckham-in-soccer-jersey-closeup-photo-u1?auto=format&q=60&fit=crop&fm=pjpg&dpr=2&w=375")
+user_19.photo.attach(io: user_avatar19, filename: 'Saka_pic', content_type: "image/jpeg")
+user_19.save!
+
+user_avatar20 = URI.open("https://d3j2s6hdd6a7rg.cloudfront.net/v2/uploads/media/default/0001/97/thumb_96317_default_news_size_5.jpeg")
+user_20.photo.attach(io: user_avatar20, filename: 'Saka_pic', content_type: "image/jpeg")
+user_20.save!
 
 puts "Creating games with chatrooms..."
 
@@ -48,6 +89,16 @@ Chatroom.create!(game: game_1)
 
 game_2 = Game.new(price: 5.0, game_size: 7, date: DateTime.parse("2024/04/05 13:00"), location: "King Solomon Academy", description: "60mins game, arrive 10-15mins before kick off, no shouting and no aggressive behaviour, Respect Host decision, 4G artificial pitch. AG boots or astro ok. Team colour: Please bring both a light and dark top with you to help splitting the teams at the pitch", gender: "Male", level: " Decent", completed: false)
 game_2.user = user_2
+player1 = Player.create!(user: user_11, game: game_2, team: 1)
+player2 = Player.create!(user: user_12, game: game_2, team: 1)
+player3 = Player.create!(user: user_13, game: game_2, team: 1)
+player4 = Player.create!(user: user_14, game: game_2, team: 1)
+player5 = Player.create!(user: user_15, game: game_2, team: 1)
+player6 = Player.create!(user: user_16, game: game_2, team: 2)
+player7 = Player.create!(user: user_17, game: game_2, team: 2)
+player8 = Player.create!(user: user_18, game: game_2, team: 2)
+player9 = Player.create!(user: user_19, game: game_2, team: 2)
+player0 = Player.create!(user: user_20, game: game_2, team: 2)
 game_2.save!
 Chatroom.create!(game: game_2)
 
