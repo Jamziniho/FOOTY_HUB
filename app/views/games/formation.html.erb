@@ -18,9 +18,17 @@
           </div>
 
           <div class="lineups">
-          <ul>
+          <ul class="nameformashon">
           <% @game.players.where({team: 1}).each do |player| %>
-          <li> <p class="nameformation"><%= player.user.first_name %></p> </li>
+            <% player_name = "#{player.user.first_name[0]}. #{player.user.last_name.upcase}" %>
+            <div class='player-box'>
+              <% if player.user.photo.attached? %>
+              <%= cl_image_tag player.user.photo.key, class: "imagetag" %>
+              <% else %>
+                <%= image_tag "avatar.png", class: "imagetag" %>
+              <% end %>
+              <p class="nameformation <%= player_name.length > 10 ? 'small' : '' %>"><%= player_name %></p>
+            </div>
           <% end %>
           </ul>
           </div>
@@ -32,10 +40,19 @@
             </div>
 
             <div class="lineups">
-            <ul>
+            <ul class="nameformashon">
             <% @game.players.where({team: 2}).each do |player| %>
-            <li><p class="nameformation"><%= player.user.first_name %></p></li>
+              <% player_name = "#{player.user.first_name[0]}. #{player.user.last_name.upcase}" %>
+              <div class='player-box'>
+                <% if player.user.photo.attached? %>
+                <%= cl_image_tag player.user.photo.key, class: "imagetag" %>
+                <% else %>
+                  <%= image_tag "avatar.png", class: "imagetag" %>
+                <% end %>
+                <p class="nameformation <%= player_name.length > 10 ? 'small' : '' %>"><%= player_name %></p>
+              </div>
             <% end %>
+
             <ul>
           </div>
       </div>

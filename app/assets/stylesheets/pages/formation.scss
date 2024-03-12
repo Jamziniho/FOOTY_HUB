@@ -1,5 +1,17 @@
 .ftpage{
 
+  .player-box {
+    display: flex;
+    column-gap: 5px;
+    align-items: center;
+    margin-bottom: 10px;
+    p {
+      font-size: 15px;
+      &.small {
+        font-size: 12px;
+      }
+    }
+  }
 
   .banner1, .banner2 {
   background-color: rgb(191, 31, 31);
@@ -15,9 +27,20 @@
 
   }
 
+  .imagetag{
+    height: 40px;
+    width: 40px;
+  }
+
+  .nameformashon{
+    padding: 0px;
+  }
+
   .nameformation {
     padding-top: 5px;
     font-size: 20px;
+    text-align: center;
+    color: rgb(0, 65, 41);
   }
 
   .lineups{
@@ -26,12 +49,12 @@
 
   .container {
     display: flex;
-    justify-content: space-around;
-    border: 2px solid #c11e1e;
+    justify-content:space-between;
   }
 
   .team1, .team2 {
     width: 150px;
+    justify-content: center;
   }
 
 
