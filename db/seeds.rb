@@ -18,7 +18,7 @@ User.destroy_all
 Message.destroy_all
 
 puts "Creating User..."
-user_1 = User.create!(first_name: "Tori", last_name: "Evans", email: "test2@test.com", password: "123456", preferred_position: "Offensive", level: "Casual", age: 24 )
+user_1 = User.create!(first_name: "Tori", last_name: "Evans", email: "test2@test.com", password: "123456", preferred_position: "Defensive", level: "Casual", age: 24 )
 user_avatar1 = URI.open("https://avatars.githubusercontent.com/u/146045135?v=4")
 user_1.photo.attach(io: user_avatar1, filename: 'Saka_pic', content_type: "image/jpeg")
 user_1.save!
@@ -38,12 +38,12 @@ user_avatar4 = URI.open("https://res.cloudinary.com/wagon/image/upload/c_fill,g_
 user_4.photo.attach(io: user_avatar4, filename: 'Saka_pic', content_type: "image/jpeg")
 user_4.save!
 
-user_5 = User.create!(first_name: "Soukaina", last_name: "Guezour", email: "test5@test.com", password: "123456", preferred_position: "Offensive", level: "Amateur", age: 36 )
+user_5 = User.create!(first_name: "Soukaina", last_name: "Guezour", email: "test5@test.com", password: "123456", preferred_position: "Defensive", level: "Amateur", age: 36 )
 user_avatar5 = URI.open("https://avatars.githubusercontent.com/u/128966088?v=4")
 user_5.photo.attach(io: user_avatar5, filename: 'Saka_pic', content_type: "image/jpeg")
 user_5.save!
 
-user_6 = User.create!(first_name: "Elizabeth", last_name: "Ojambo", email: "test6@test.com", password: "123456", preferred_position: "Offensive", level: "Advanced", age: 27 )
+user_6 = User.create!(first_name: "Elizabeth", last_name: "Ojambo", email: "test6@test.com", password: "123456", preferred_position: "Defensive", level: "Advanced", age: 27 )
 user_avatar6 = URI.open("https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1705241903/smnyjqzddt9ibpsibiuc.jpg")
 user_6.photo.attach(io: user_avatar6, filename: 'Saka_pic', content_type: "image/jpeg")
 user_6.save!
@@ -58,7 +58,7 @@ user_avatar8 = URI.open("https://res.cloudinary.com/wagon/image/upload/c_fill,g_
 user_8.photo.attach(io: user_avatar8, filename: 'Saka_pic', content_type: "image/jpeg")
 user_8.save!
 
-user_9 = User.create!(first_name: "Louise", last_name: "Stone", email: "test9@test.com", password: "123456", preferred_position: "Offensive", level: "Casual", age: 21 )
+user_9 = User.create!(first_name: "Louise", last_name: "Stone", email: "test9@test.com", password: "123456", preferred_position: "Defensive", level: "Casual", age: 21 )
 user_avatar9 = URI.open("https://avatars.githubusercontent.com/u/114944046?v=4")
 user_9.photo.attach(io: user_avatar9, filename: 'Saka_pic', content_type: "image/jpeg")
 user_9.save!
@@ -83,7 +83,7 @@ user_avatar13 = URI.open("https://i.pinimg.com/736x/4d/5e/ab/4d5eab775a2a72a20af
 user_13.photo.attach(io: user_avatar13, filename: 'Saka_pic', content_type: "image/jpeg")
 user_13.save!
 
-user_14 = User.create!(first_name: "Thierry", last_name: "Henry", email: "test14@test.com", password: "123456", preferred_position: "Defensive", level: "Amateur", age: 40 )
+user_14 = User.create!(first_name: "Thierry", last_name: "Henry", email: "test14@test.com", password: "123456", preferred_position: "Offensive", level: "Amateur", age: 40 )
 user_avatar14 = URI.open("https://s.france24.com/media/display/8484ed96-4042-11ee-b936-005056a90284/w:1280/p:1x1/a874c291314b0b55b36b1ecda08a1d9eff46791b.jpg")
 user_14.photo.attach(io: user_avatar14, filename: 'Saka_pic', content_type: "image/jpeg")
 user_14.save!
@@ -118,7 +118,7 @@ user_avatar20 = URI.open("https://d3j2s6hdd6a7rg.cloudfront.net/v2/uploads/media
 user_20.photo.attach(io: user_avatar20, filename: 'Saka_pic', content_type: "image/jpeg")
 user_20.save!
 
-user_21 = User.create!(first_name: "Heba", last_name: "Malik", email: "test21@test.com", password: "123456", preferred_position: "Offensive", level: "Intermediate", age: 25 )
+user_21 = User.create!(first_name: "Heba", last_name: "Malik", email: "test21@test.com", password: "123456", preferred_position: "Defensive", level: "Intermediate", age: 25 )
 user_avatar21 = URI.open("https://ca.slack-edge.com/T02NE0241-U01VCAWBU1W-cef086c8cfd8-512")
 user_21.photo.attach(io: user_avatar21, filename: 'Saka_pic', content_type: "image/jpeg")
 user_21.save!
@@ -128,7 +128,7 @@ user_avatar22 = URI.open("https://www.thesun.co.uk/wp-content/uploads/2023/10/RA
 user_22.photo.attach(io: user_avatar22, filename: 'Saka_pic', content_type: "image/jpeg")
 user_22.save!
 
-user_23 = User.create!(first_name: "Beth", last_name: "Mead", email: "test23@test.com", password: "123456", preferred_position: "Offensive", level: "Intermediate", age: 25 )
+user_23 = User.create!(first_name: "Beth", last_name: "Mead", email: "test23@test.com", password: "123456", preferred_position: "Defensive", level: "Intermediate", age: 25 )
 user_avatar23 = URI.open("https://www.thescarboroughnews.co.uk/webimg/QVNIMTE4ODc4MTY0.jpg?width=1200&enable=upscale")
 user_23.photo.attach(io: user_avatar23, filename: 'Saka_pic', content_type: "image/jpeg")
 user_23.save!
@@ -138,7 +138,7 @@ user_avatar24 = URI.open("https://e0.365dm.com/23/07/2048x1152/skysports-lauren-
 user_24.photo.attach(io: user_avatar24, filename: 'Saka_pic', content_type: "image/jpeg")
 user_24.save!
 
-user_25 = User.create!(first_name: "Sam", last_name: "Kerr", email: "test25@test.com", password: "123456", preferred_position: "Offensive", level: "Intermediate", age: 25 )
+user_25 = User.create!(first_name: "Sam", last_name: "Kerr", email: "test25@test.com", password: "123456", preferred_position: "Defensive", level: "Intermediate", age: 25 )
 user_avatar25 = URI.open("https://images.sbs.com.au/dims4/default/2ef917b/2147483647/strip/true/crop/6151x3460+507+258/resize/1280x720!/quality/90/?url=http%3A%2F%2Fsbs-au-brightspot.s3.amazonaws.com%2Fe9%2F49%2F3caa194b4d77b558874a5d562815%2F20230818001832190407-original.jpg")
 user_25.photo.attach(io: user_avatar25, filename: 'Saka_pic', content_type: "image/jpeg")
 user_25.save!
@@ -153,7 +153,7 @@ user_avatar27 = URI.open("https://images2.minutemediacdn.com/image/upload/c_fill
 user_27.photo.attach(io: user_avatar27, filename: 'Saka_pic', content_type: "image/jpeg")
 user_27.save!
 
-user_28 = User.create!(first_name: "Grace", last_name: "Macintosh", email: "test28@test.com", password: "123456", preferred_position: "Offensive", level: "Intermediate", age: 25 )
+user_28 = User.create!(first_name: "Grace", last_name: "Macintosh", email: "test28@test.com", password: "123456", preferred_position: "Defensive", level: "Intermediate", age: 25 )
 user_avatar28 = URI.open("https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1705336125/eazm1sczlckuzuugv96s.jpg")
 user_28.photo.attach(io: user_avatar28, filename: 'Saka_pic', content_type: "image/jpeg")
 user_28.save!
@@ -163,7 +163,7 @@ user_avatar29 = URI.open("https://www.thesun.co.uk/wp-content/uploads/2021/06/cr
 user_29.photo.attach(io: user_avatar29, filename: 'Saka_pic', content_type: "image/jpeg")
 user_29.save!
 
-user_30 = User.create!(first_name: "Ebitare", last_name: "Alaibe", email: "test30@test.com", password: "123456", preferred_position: "Offensive", level: "Intermediate", age: 25 )
+user_30 = User.create!(first_name: "Ebitare", last_name: "Alaibe", email: "test30@test.com", password: "123456", preferred_position: "Defensive", level: "Intermediate", age: 25 )
 user_avatar30 = URI.open("https://ca.slack-edge.com/T02NE0241-U02G7NZM77G-566079939a5a-512")
 user_30.photo.attach(io: user_avatar30, filename: 'Saka_pic', content_type: "image/jpeg")
 user_30.save!
