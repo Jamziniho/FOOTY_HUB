@@ -13,22 +13,22 @@
     <div class="profile-form">
     <form data-action="submit->profile#submit">
     <label for="first_name"><i class="fas fa-user"></i> First Name:</label>
-    <input data-profile-target='input' type="text" id="first_name" name="first_name" value="<%= @user.first_name %>"><br>
+    <input class="profile-form-input" data-profile-target='input' type="text" id="first_name" name="first_name" value="<%= @user.first_name %>"><br>
 
     <label for="last_name"><i class="fas fa-user"></i> Last Name:</label>
-    <input data-profile-target='input' type="text" id="last_name" name="last_name" value="<%= @user.last_name %>"><br>
+    <input class="profile-form-input"  data-profile-target='input' type="text" id="last_name" name="last_name" value="<%= @user.last_name %>"><br>
 
     <label for="preferred_position"><i class="fas fa-futbol"></i> Preferred Position:</label>
-    <input data-profile-target='input' type="text" id="preferred_position" name="preferred_position" value="<%= @user.preferred_position %>"><br>
+    <input class="profile-form-input" data-profile-target='input' type="text" id="preferred_position" name="preferred_position" value="<%= @user.preferred_position %>"><br>
 
     <label for="email"><i class="fas fa-envelope"></i> Email:</label>
-    <input data-profile-target='input' type="text" id="email" name="email" value="<%= @user.email %>"><br>
+    <input class="profile-form-input"  data-profile-target='input' type="text" id="email" name="email" value="<%= @user.email %>"><br>
 
     <h3 for="matches_won"><i class="fas fa-trophy"></i> Matches Won:</h3>
-    <input type="text" value="<%= @user.matches_won %>4">
+    <input class="profile-form-input"  type="text" value="<%= @user.matches_won %>4">
 
     <h3 for="matches_lost"><i class="fas fa-exclamation-circle"></i> Matches Lost:</h3>
-    <input type="text" value="<%= @user.matches_lost %>3">
+    <input  class="profile-form-input" type="text" value="<%= @user.matches_lost %>3">
 
     <button type='button'
             class='btn btn-success'
