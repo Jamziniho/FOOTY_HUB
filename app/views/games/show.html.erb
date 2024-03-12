@@ -1,4 +1,5 @@
 <div class="background-img-show" style="background-image: url('<%= asset_path('ball.jpg') %>');">
+<% joined = @game.players.where({user_id: current_user.id}).length > 0  %>
 <%= link_to games_path, class: "backshow" do %>
   <i class="fa-solid fa-arrow-left fa-2xl arrow-show" style="color: #ffffff;"></i>
 <% end %>
@@ -23,9 +24,37 @@
     <p class="space"><%= spacesLeft %> spaces left</p>
 <% end %>
 
-  <% if @game.players.where({user_id: current_user.id}).length === 0 %>
+  <% if !joined %>
     <%= link_to spacesLeft > 0 ? "Join Game" : "Game Full", game_players_path(@game), class: "join-game-btn", data: { turbo_method: :post }, style: "pointer-events: #{spacesLeft > 0 ? "all" : "none"}" %>
   <% else %>
     <p class="joined"style="font-size: 20px;">Joined</p>
   <% end %>
+
+  <div class="text-end dashboard-btns">
+    <% if joined %>
+      <%= link_to chatroom_path(@game.chatroom.id), class: 'common-button-class cbc-red' do %>
+  <i class="fas fa-comment"></i>
+<% end %>
+      <%= link_to 'LEAVE ', game_player_path(@game.id, current_user.id), class: 'common-button-class cbc-red', data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to leave the game?" } %>
+    <% end %>
+  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+   <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalCenterTitle">Modal title</h5>
+         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+         </button>
+      </div>
+
+      <div class="modal-body">
+          <div class="modal-footer">
+           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+           <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+         </div>
+       </div>
+     </div>
+   </div>
+ </div>
 </div>
