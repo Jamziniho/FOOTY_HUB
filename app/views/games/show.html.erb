@@ -33,14 +33,20 @@
       <% if @game.players.where({user_id: current_user.id}).length === 0 %>
         <%= link_to spacesLeft > 0 ? "Join Game" : "Game Full", game_players_path(@game), class: "join-game-btn", data: { turbo_method: :post }, style: "pointer-events: #{spacesLeft > 0 ? "all" : "none"}" %>
       <% else %>
-        <p class="joined"style="font-size: 20px;">Joined</p>
+        <div class="joineddivshow">
+          <p class="joined"style="font-size: 20px;">Joined</p>
+        <div class = "icondiv">
+            <%= link_to chatroom_path(@game.chatroom.id), class: 'chaticon' do %>
+            <i class="fas fa-comment fa-xl" style="color: #004129;"></i>
+            <% end %>
+            <%= link_to game_player_path(@game.id, current_user.id), class: 'dooricon', data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to leave the game?" } do %>
+            <i class="fa-solid fa-door-open fa-xl" style="color: #004129;"></i>
+          <% end %>
+        </div>
+        </div>
       <% end %>
     </div>
   </div>
   <div class="tab-pane fade" id="pills-lineup" role="tabpanel" aria-labelledby="pills-lineup-tab" tabindex="0"></div>
     <%= render 'formation', game: @game %>
 </div>
-
-
-
-
