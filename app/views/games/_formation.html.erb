@@ -32,7 +32,8 @@
           <ul class="nameformation">
             <% game.players.where({team: 2}).each do |player| %>
               <% player_name = "#{player.user.first_name[0]}. #{player.user.last_name.upcase}" %>
-              <div class='player-box'>
+              <div class='player-box d-flex justify-content-between'>
+              <div class = "d-flex align-items-center">
                 <% if player.user.photo.attached? %>
                 <%= cl_image_tag player.user.photo.key, class: "imagetag" %>
                 <% else %>
@@ -40,6 +41,8 @@
                 <% end %>
                 <p class="nameformation <%= player_name.length > 10 ? 'small' : '' %>"><%= player_name %></p>
               </div>
+            <p class="nameposition"><%= " #{player.user.preferred_position} "%></p>
+            </div>
             <% end %>
           </ul>
         </div>
