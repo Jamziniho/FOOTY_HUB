@@ -19,9 +19,9 @@
       <h5 class="show-card-location"> <i class="fa-solid fa-map-pin fa-lg" style="color: #00422A;"></i> </i> <%= @game.location %></h5>
       <h5 class="show-card-host"><%="By #{@game.user.first_name}"%></h5>
         <div class="show-card-container">
-          <div class ="shwcard"> <h5 class="show-card-size"><span class="redheader">Game Size</span> <%= @game.game_size %>-a-side</h5></div>
-          <div class ="shwcard"> <h5 class="show-card-level"><span class="redheader">Level</span> <%= @game.level %></h5></div>
-          <div class ="shwcard"> <h5 class="show-card-gender"><span class="redheader">Gender</span> <%= @game.gender %></h5></div>
+          <div class ="shwcard"> <h5 class="show-card-size"><span class="redheader">Game Size</span></h5><h5> <%= @game.game_size %>-a-side</h5></div>
+          <div class ="shwcard"> <h5 class="show-card-level"><span class="redheader">Level</span></h5><h5> <%= @game.level %></h5></div>
+          <div class ="shwcard"> <h5 class="show-card-gender"><span class="redheader">Gender</span></h5><h5> <%= @game.gender %></h5></div>
         </div>
       <h5 class="show-card-price"> £<%= @game.price.round %></h5>
       <div class="description-card">
