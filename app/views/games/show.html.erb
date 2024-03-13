@@ -16,7 +16,7 @@
   <div class="tab-pane fade show active" id="pills-info" role="tabpanel" aria-labelledby="pills-info-tab" tabindex="0">
       <div class="wholeshowpage" data-controller="game" data-game-id-value="<%= @game.id %>" data-game-token-value="<%= form_authenticity_token %>">
       <h5 class="show-card-date"> <%= @game.date.strftime("%m-%e-%y %H:%M")%></h5>
-      <h5 class="show-card-location"> <i class="fa-solid fa-location-dot fa-lg" style="color: #00422A;"></i> <%= @game.location %></h5>
+      <h5 class="show-card-location"> <i class="fa-solid fa-map-pin fa-lg" style="color: #00422A;"></i> </i> <%= @game.location %></h5>
       <h5 class="show-card-host"><%="By #{@game.user.first_name}"%></h5>
         <div class="show-card-container">
           <div class ="shwcard"> <h5 class="show-card-size"><span class="redheader">Game Size</span> <%= @game.game_size %>-a-side</h5></div>

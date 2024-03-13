@@ -9,7 +9,7 @@
           <%= text_field_tag :query,
                 params[:query],
                 class: " type-loc form-control",
-                placeholder: "Type a location"
+                placeholder: "Search for a game"
             %>
           <%= button_tag "Search" , name: "", class: " search-btn btn-fcard px-3" do%>
           <i class="fa-solid fa-magnifying-glass"></i>
@@ -27,23 +27,26 @@
             <div class="col-md-6">
               <%= link_to game_path(game), class: "text-decoration-none text-white" do %>
                 <div class="game-card">
-                  <div class="game-card-body">
-                    <!-- Car image column -->
-                    <div class="car-div d-flex justify-content-between">
-                        <div class="description-title flex-grow-1">
-                          <h5 class="game-card-title"><%= "#{game.location}" %></h5>
-                          <h5 class="game-card-date"><%= "#{game.date.strftime("%m-%e-%y %H:%M")}" %></h5>
-                          <h5 class="game-card-host"> <i class="fa-regular fa-user host-icon" style="color: #ffffff;"></i><%= "#{game.user.first_name}" %></h5>
-                        </div>
-
-                        <%# <div class="d-flex justify-content-end"> %>
-                          <div class="text-end game-price" style="max-width: 90px;">
-                            <h5 class="price-text">£<%= "#{game.price.round} / pp" %></h5>
-                            <h5 class="game-card-level"><%= "#{game.level}"%></h5>
-                            <h5 class="game-card-size"><%= "#{game.game_size}-a-side"%></h5>
-                          </div>
-                        <%# </div> %>
+                  <div class="top">
+                    <div>
+                      <h5 class="title"><%= "#{game.location}" %></h5>
+                      <h5 class="size"><i class="fa-solid fa-users fa-sm"></i><%= "#{game.game_size}-a-side"%></h5>
                     </div>
+                    <div class='date-level'>
+                      <h5 class="date"><i class="fa-solid fa-clock"></i><%= "#{game.date.strftime("%m-%e-%y %H:%M")}" %></h5>
+                      <h5 class="game-card-level"><%= "#{game.level}"%></h5>
+                    </div>
+                  </div>
+                  <div class="bottom">
+                    <h5 class="host">
+                      <% if game.user.photo.attached? %>
+                        <%= cl_image_tag game.user.photo.key, class: "imagetag-index" %>
+                      <% else %>
+                        <%= image_tag "avatar.png", class: "imagetag-index" %>
+                      <% end %>
+                      <%= "#{game.user.first_name}" %>
+                    </h5>
+                    <h5 class="price-text"><i class="fa-solid fa-tag"></i>       £<%= "#{game.price.round} / pp" %></h5>
                   </div>
                 </div>
               <% end %>
