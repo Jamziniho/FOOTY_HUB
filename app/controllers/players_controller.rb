@@ -10,7 +10,7 @@ class PlayersController < ApplicationController
       @player.team = @player.game.players.last.team == 1 ? 2 : 1
 
       if @player.save
-        head :ok
+        redirect_to game_path(@game)
       else
         render 'games/show', status: :unprocessable_entity
       end

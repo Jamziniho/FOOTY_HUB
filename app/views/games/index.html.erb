@@ -63,6 +63,9 @@
           <i class="fa-solid fa-circle-right fa-2xl"></i>
         <% end %>
         <% end %>
+        <% if @games.empty? %>
+        <p class='empty-notice-index'>No Results Available</p>
+    <% end %>
       </div>
         </div>
       </div>

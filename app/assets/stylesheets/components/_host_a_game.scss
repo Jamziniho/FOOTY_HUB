@@ -19,7 +19,6 @@
     width: 100%;
     padding: 8px 12px;
     font-weight: 350;
-    font-size: small;
     line-height: 1;
     border-bottom-color: #C11E1E;
     border-top: none;
@@ -37,7 +36,9 @@
     border-radius: 10px;
 
   }
-
+  input, textarea {
+    font-size: 17px;
+  }
 }
 .inline-inputs {
   display: flex;

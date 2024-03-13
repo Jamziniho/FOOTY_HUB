@@ -1,7 +1,7 @@
 <div class="background-img-new" style="background-image: url('<%= asset_path('ball.jpg') %>');">
 </div>
 
-<h1 class="host-title">HOST A GAME</h1>
+<h1 class="host-title">EDIT A GAME</h1>
 
 <div class="allpage">
   <div class="new-game-form">
@@ -22,17 +22,10 @@
         <%= f.input :price %>
         <%= f.input :gender, collection: ["Male", "Female", "Any"] %>
         <%= f.input :description, input_html: {class: 'description', rows: 1} %>
-        <%= f.submit "Confirm", class: "btn btn-primary" %>
+        <%= f.submit "Save Changes", class: "btn btn-primary" %>
         <%= link_to dashboard_path, class: "confirm-btn" do %>
         <% end %>
       <% end %>
     </div>
   </div>
 </div>
-
-
-<%# <style>
-  body {
-    overflow: hidden;
-  }
-</style> %>
