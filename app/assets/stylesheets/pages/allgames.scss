@@ -38,13 +38,7 @@
 }
 
 
-.game-card {
-  background-color: rgba(0, 65, 41, 0.9);
-  padding: 10px;
-  height:160px ;
-  margin-bottom: 25px;
-  border-radius: 10px;
-}
+
 
 .nav-button-container {
   display: flex;
@@ -88,12 +82,82 @@
   border-radius: 0px 15px 15px 0px;
 }
 
-.game-card-date, .game-card-host, .game-card-size,.game-card-level{
-  font-size: 18px;
-  margin-bottom: 5px;
+.game-card {
+  background-color: rgba(0, 65, 41, 0.9);
+  padding: 10px;
+  height:160px ;
+  margin-bottom: 25px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  .top > div, .bottom, .host, .size, .date {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .top {
+    .date-level {
+      h5 {
+        font-size: 18px;
+        opacity: .7;
+      }
+    }
+    .size, .date {
+      justify-content: flex-end;
+      column-gap: 8px;
+      min-width: 110px;
+    }
+  }
+  .bottom {
+    h5 {
+      font-size: 17px;
+    }
+    .imagetag-index{
+      height: 35px;
+      width: 35px;
+      border-radius: 50%;
+      margin-right: 10px;
+      object-fit: cover;
+    }
+    h5.price-text{
+      display: flex;
+      justify-content: flex-end;
+      gap: 8px;
+    }
+  }
 }
 
-.game-card-title, .game-card-date, .game-card-host, .game-card-size{
-  padding-top: 5px;
-  padding-top: 5px;
+// .title{
+//   h5 {
+//     font-size: 18px;
+//     &.small {
+//       font-size: 18px;
+//     }
+//   }
+// }
+
+// .game-card-date, .game-card-host, .game-card-size,.game-card-level{
+//   font-size: 18px;
+//   margin-bottom: 5px;
+// }
+
+// .game-card-title, .game-card-date, .game-card-host, .game-card-size{
+//   padding-top: 5px;
+//   padding-top: 5px;
+// }
+
+.game-card-host {
+  margin-top: 20px;
+}
+
+.text-end-game-price{
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.game-card-bottom {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
 }

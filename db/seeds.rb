@@ -172,7 +172,7 @@ puts "User created!"
 
 puts "Creating games with chatrooms..."
 
-game_1 = Game.new(price: 7.0, game_size: 5, date: DateTime.parse("2024/03/30/ 13:00"), location: "Colombo Centre, Southwark", description: "All abilities are welcome to join, a mix between regulars and new players, closest station: Southwark, Please arrive 10 mins before KO so you are ready to start on time", gender:"Male", level: "Amatuer", completed: false)
+game_1 = Game.new(price: 7.0, game_size: 5, date: DateTime.parse("2024/03/30/ 13:00"), location: "Colombo Centre", description: "All abilities are welcome to join, a mix between regulars and new players, closest station: Southwark, Please arrive 10 mins before KO so you are ready to start on time", gender:"Male", level: "Amatuer", completed: false)
 game_1.user = user_1
 game_1.save!
 Chatroom.create!(game: game_1)
