@@ -5,8 +5,9 @@
   border-radius: 20px;
   background-color: rgba(255, 255, 255, 0.85);
   margin-bottom: 20px;
+  margin-top: 50px;
   padding: 16px 22px;
-  // min
+
 }
 .dashboard-title-hosted{
   color: #C11E1E;
@@ -72,11 +73,14 @@
   }
 }
 .dashboard-hosted-card {
+  display: flex;
+  justify-content: space-between;
   padding: 12px;
   margin-bottom: 20px;
   background-color: rgba(194, 31, 31, 0.9);
   color: white;
-  a{
+  a {
+    color: white;
     text-decoration: none;
   }
 }
@@ -108,4 +112,9 @@
 
 .cardlink-db{
   text-decoration: none;
+}
+
+.edithicon{
+  color: white;
+  justify-self: flex-end;
 }

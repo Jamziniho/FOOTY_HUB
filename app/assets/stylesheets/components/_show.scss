@@ -38,6 +38,8 @@
 }
 
 .wholeshowpage{
+  display: flex;
+  flex-direction: column;
   margin: 27px;
   padding: 25px;
   border: 2px solid #c11e1e;
@@ -85,7 +87,7 @@
   border-radius: 10px;
   background-color: #004129;
   color: white;
-  margin-left: 185px;
+  align-self: flex-end;
 }
 .show-card-container {
   display: flex;
@@ -149,3 +151,8 @@
 // width: 50px;
 // justify-content: center;
 // }
+
+.editicononshow{
+  display: flex;
+  justify-content: space-between;
+}

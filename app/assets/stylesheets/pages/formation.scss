@@ -4,7 +4,7 @@
   .container {
     padding: 5px;
   }
-  .player-box {
+  .player-box, .player-box-empty {
     display: flex;
     column-gap: 5px;
     align-items: center;
@@ -19,18 +19,25 @@
       }
     }
   }
+  .player-box-empty{
+    opacity: 0.5;
+  }
+
 
   .banner {
   color: white;
   font-size: 20px;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   padding: 3px 5px;
   text-align: center;
   h1 {
     margin: 0;
     font-weight: 400;
+  }
+  p{
+    margin-bottom: 0px;
   }
   }
 

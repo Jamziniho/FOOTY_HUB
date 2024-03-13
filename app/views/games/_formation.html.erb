@@ -3,7 +3,9 @@
       <div class="team1">
         <div class="banner">
           <h1>Team 1</h1>
+          <p><%="#{game.players.where({team: 1}).count} / #{game.game_size}" %></p>
         </div>
+
         <div class="lineups">
           <ul class="nameformation">
             <% game.players.where({team: 1}).each do |player| %>
@@ -20,6 +22,15 @@
                 <p class="nameposition"><%= " #{player.user.preferred_position} "%></p>
               </div>
             <% end %>
+            <% (game.game_size - game.players.where({team: 1}).count).times do %>
+              <div class='player-box-empty d-flex justify-content-between'>
+                <div class = "d-flex align-items-center">
+                    <%= image_tag "avatar.png", class: "imagetag" %>
+                  <p class="nameformation"> <%= "JOHN DOE" %></p>
+                </div>
+                <p class="nameposition"><%= "POSITION"%></p>
+              </div>
+            <% end %>
           </ul>
         </div>
       </div>
@@ -27,6 +38,7 @@
       <div class="team2 mt-2">
         <div class="banner ">
         <h1>Team 2</h1>
+        <p><%="#{game.players.where({team: 2}).count} / #{game.game_size}" %></p>
         </div>
         <div class="lineups">
           <ul class="nameformation">
@@ -43,6 +55,15 @@
               </div>
             <p class="nameposition"><%= " #{player.user.preferred_position} "%></p>
             </div>
+            <% end %>
+            <% (game.game_size - game.players.where({team: 2}).count).times do %>
+              <div class='player-box-empty d-flex justify-content-between'>
+                <div class = "d-flex align-items-center">
+                    <%= image_tag "avatar.png", class: "imagetag" %>
+                  <p class="nameformation"> <%= "JOHN DOE" %></p>
+                </div>
+                <p class="nameposition"><%= "POSITION"%></p>
+              </div>
             <% end %>
           </ul>
         </div>

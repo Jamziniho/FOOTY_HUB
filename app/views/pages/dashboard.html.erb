@@ -3,7 +3,7 @@
     <h1 class= "dashboard-headerone d-flex justify-content-center" > FOOTY<span class="hub">HUB</span> </h1>
   </div>
 
-  <h1 class= "dashboard-title">YOUR GAMES</h1>
+  <%# <h1 class= "dashboard-title">YOUR GAMES</h1> %>
 
   <div class ="dashboard-card-container " style="overflow-y: auto;">
     <h2 class = "dashboard-title-joined w-100">Upcoming games</h2>
@@ -33,10 +33,10 @@
   </div>
 
   <div class ="dashboard-card-container-hosted" style=" overflow-y: auto;">
-    <h2 class = "dashboard-title-hosted w-100">My games</h2>
+    <h2 class = "dashboard-title-hosted w-100">Hosted games</h2>
     <% @hosted_games.each do |game| %>
       <%= link_to game_path(game), class: "cardlink-db" do  %>
-        <div class="dashboard-hosted-card d-flex align-items-center">
+        <div class="dashboard-hosted-card d-flex">
           <div>
             <p class="dashboard-card-location"><i class="fa-solid fa-map-pin"></i><%= "#{game.location}" %></p>
             <p class="dashboard-card-size"><i class="fa-solid fa-users fa-sm"></i><%= "#{game.game_size}" %> -a-side </p>
