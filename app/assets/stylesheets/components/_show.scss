@@ -77,8 +77,15 @@
 }
 
 .space{
-  color: #004129;
-  padding-top: 10px;
+  font-size: 18px;
+  padding: 10px;
+  border: 1.5px solid #004129;
+  width: fit-content;
+  margin: 10px;
+  border-radius: 10px;
+  background-color: #004129;
+  color: white;
+  margin-left: 185px;
 }
 .show-card-container {
   display: flex;
