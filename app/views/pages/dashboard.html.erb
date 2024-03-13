@@ -20,6 +20,9 @@
       </div>
       <% end %>
     <% end %>
+    <% if @joined_games.empty? %>
+      <p class='empty-notice'>You haven't joined any games</p>
+  <% end %>
 </div>
 
 <div class ="dashboard-card-container-hosted" style=" overflow-y: auto;">
@@ -33,6 +36,9 @@
 
       </div>
     </div>
+  <% end %>
+  <% if @hosted_games.empty? %>
+    <p class='empty-notice'>You haven't hosted any games</p>
   <% end %>
 </div>
 </div>

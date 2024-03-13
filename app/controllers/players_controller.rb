@@ -2,20 +2,17 @@ class PlayersController < ApplicationController
   def create
     @player = Player.new
     @player.user = current_user
-    @player.game = Game.find(params[:game_id])
-    if @player.game.players.length == @player.game.game_size
+    @game = Game.find(params[:game_id])
+    @player.game = @game
+    if @player.game.players.length == @player.game.game_size * 2
       head 403
     else
-      if @player.game.players.length.odd?
-        @player.team = 1
-      else
-        @player.team = 2
-      end
+      @player.team = @player.game.players.last.team == 1 ? 2 : 1
 
       if @player.save
         head :ok
       else
-        render :new, status: :unprocessable_entity
+        render 'games/show', status: :unprocessable_entity
       end
     end
   end

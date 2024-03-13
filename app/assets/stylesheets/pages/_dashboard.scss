@@ -11,6 +11,13 @@
 .dashboard-title-hosted{
   color: #C11E1E;
 }
+.dashboard-card-container, .dashboard-card-container-hosted {
+  .empty-notice {
+    width: 350px;
+    padding: 5px;
+    color: black;
+  }
+}
 .dashboard-card-container-hosted{
   display: flex;
   flex-direction: column;

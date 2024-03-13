@@ -22,8 +22,9 @@ export default class extends Controller {
         this.buttonTarget.classList.add('d-none');
         this.joinedNoticeTarget.classList.remove('d-none');
         this.joinedButtonsTarget.classList.remove('d-none');
-      } else {
+      } else if (response === 403) {
         // games full....
+        this.buttonTarget.innerText = 'Game full';
       }
     })
   }
