@@ -23,7 +23,7 @@ user_avatar1 = URI.open("https://avatars.githubusercontent.com/u/146045135?v=4")
 user_1.photo.attach(io: user_avatar1, filename: 'Saka_pic', content_type: "image/jpeg")
 user_1.save!
 
-user_2 = User.create!(first_name: "Abdul", last_name: "Omar", email: "test1@test.com", password: "123456", preferred_position: "Offensive", level: "Advanced", age: 18 )
+user_2 = User.create!(first_name: "Abdul", last_name: "Omar", email: "ao@gmail.com", password: "123456", preferred_position: "Offensive", level: "Advanced", age: 18 )
 user_avatar2 = URI.open("https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1705489872/vetkba0sebxdv8xunojj.jpg")
 user_2.photo.attach(io: user_avatar2, filename: 'Saka_pic', content_type: "image/jpeg")
 user_2.save!
@@ -44,7 +44,7 @@ user_5.photo.attach(io: user_avatar5, filename: 'Saka_pic', content_type: "image
 user_5.save!
 
 user_6 = User.create!(first_name: "Elizabeth", last_name: "Ojambo", email: "test6@test.com", password: "123456", preferred_position: "Defensive", level: "Advanced", age: 27 )
-user_avatar6 = URI.open("https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1705241903/smnyjqzddt9ibpsibiuc.jpg")
+user_avatar6 = URI.open("https://static.wikia.nocookie.net/victoriassecret/images/4/40/LeomieAnderson-TESS.jpeg/revision/latest?cb=20181013221839")
 user_6.photo.attach(io: user_avatar6, filename: 'Saka_pic', content_type: "image/jpeg")
 user_6.save!
 
@@ -68,7 +68,7 @@ user_avatar10 = URI.open("https://res.cloudinary.com/wagon/image/upload/c_fill,g
 user_10.photo.attach(io: user_avatar10, filename: 'Saka_pic', content_type: "image/jpeg")
 user_10.save!
 
-user_11 = User.create!(first_name: "Bukayo", last_name: "Saka", email: "test11@test.com", password: "123456", preferred_position: "Offensive", level: "Casual", age: 20 )
+user_11 = User.create!(first_name: "Bukayo", last_name: "Saka", email: "bs@gmail.com", password: "123456", preferred_position: "Offensive", level: "Casual", age: 20 )
 user_avatar11 = URI.open("https://www.coachesvoice.com/wp-content/uploads/2021/09/SakaMobile.jpg")
 user_11.photo.attach(io: user_avatar11, filename: 'Saka_pic', content_type: "image/jpeg")
 user_11.save!
@@ -168,6 +168,11 @@ user_avatar30 = URI.open("https://ca.slack-edge.com/T02NE0241-U02G7NZM77G-566079
 user_30.photo.attach(io: user_avatar30, filename: 'Saka_pic', content_type: "image/jpeg")
 user_30.save!
 
+user_31 = User.create!(first_name: "Rebecca", last_name: "Jackson", email: "rebs@gmail.com", password: "123456", preferred_position: "Defensive", level: "Intermediate", age: 25 )
+user_avatar31 = URI.open("https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1705241903/smnyjqzddt9ibpsibiuc.jpg")
+user_31.photo.attach(io: user_avatar31, filename: 'Saka_pic', content_type: "image/jpeg")
+user_31.save!
+
 puts "User created!"
 
 puts "Creating games with chatrooms..."
@@ -177,23 +182,29 @@ game_1.user = user_1
 game_1.save!
 Chatroom.create!(game: game_1)
 
-game_2 = Game.new(price: 5.0, game_size: 7, date: DateTime.parse("2024/04/05 13:00"), location: "King Solomon Academy", description: "60mins game, arrive 10-15mins before kick off, no shouting and no aggressive behaviour, Respect Host decision, 4G artificial pitch. AG boots or astro ok. Team colour: Please bring both a light and dark top with you to help splitting the teams at the pitch", gender: "Male", level: " Decent", completed: false)
+game_2 = Game.new(price: 5.0, game_size: 5, date: DateTime.parse("2024/04/05 13:00"), location: "King Solomon Academy", description: "60mins game, arrive 10-15mins before kick off, no shouting and no aggressive behaviour, Respect Host decision, 4G artificial pitch. AG boots or astro ok. Team colour: Please bring both a light and dark top with you to help splitting the teams at the pitch", gender: "Male", level: " Decent", completed: false)
 game_2.user = user_2
 player1 = Player.create!(user: user_11, game: game_2, team: 1)
 player2 = Player.create!(user: user_12, game: game_2, team: 1)
 player3 = Player.create!(user: user_13, game: game_2, team: 2)
 player4 = Player.create!(user: user_14, game: game_2, team: 1)
 player5 = Player.create!(user: user_15, game: game_2, team: 1)
-player6 = Player.create!(user: user_16, game: game_2, team: 1)
-player7 = Player.create!(user: user_17, game: game_2, team: 2)
-player8 = Player.create!(user: user_18, game: game_2, team: 2)
-player9 = Player.create!(user: user_19, game: game_2, team: 2)
-player0 = Player.create!(user: user_20, game: game_2, team: 2)
 game_2.save!
 Chatroom.create!(game: game_2)
 
-game_3 = Game.new(price: 6.0, game_size: 5, date: DateTime.parse("2024/04/06 13:00"), location: "City of London Academy", description: "This casual and inclusive game is open to players of all skills and abilities, Please come 10 minutes before the kick-off.", gender: "Any", level: "Casual", completed: false)
+game_3 = Game.new(price: 6.0, game_size: 7, date: DateTime.parse("2024/04/06 13:00"), location: "City of London Academy", description: "This casual and inclusive game is open to players of all skills and abilities, Please come 10 minutes before the kick-off.", gender: "Any", level: "Casual", completed: false)
 game_3.user = user_3
+player1 = Player.create!(user: user_11, game: game_3, team: 1)
+player2 = Player.create!(user: user_12, game: game_3, team: 1)
+player3 = Player.create!(user: user_13, game: game_3, team: 2)
+player4 = Player.create!(user: user_14, game: game_3, team: 1)
+player5 = Player.create!(user: user_15, game: game_3, team: 1)
+player6 = Player.create!(user: user_16, game: game_3, team: 1)
+player7 = Player.create!(user: user_17, game: game_3, team: 2)
+player8 = Player.create!(user: user_18, game: game_3, team: 2)
+player9 = Player.create!(user: user_19, game: game_3, team: 2)
+player0 = Player.create!(user: user_20, game: game_3, team: 2)
+player01 = Player.create!(user: user_30, game: game_3, team: 2)
 game_3.save!
 Chatroom.create!(game: game_3)
 
