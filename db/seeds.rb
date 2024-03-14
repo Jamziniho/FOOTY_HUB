@@ -192,7 +192,7 @@ player5 = Player.create!(user: user_15, game: game_2, team: 1)
 game_2.save!
 Chatroom.create!(game: game_2)
 
-game_3 = Game.new(price: 6.0, game_size: 7, date: DateTime.parse("2024/04/06 13:00"), location: "City of London Academy", description: "This casual and inclusive game is open to players of all skills and abilities, Please come 10 minutes before the kick-off.", gender: "Any", level: "Casual", completed: false)
+game_3 = Game.new(price: 6.0, game_size: 7, date: DateTime.parse("2024/04/06 13:00"), location: "City of London Academy", description: "This casual and inclusive game is open to players of all skills and abilities, Please come 10 minutes before the kick-off.", gender: "Any", level: "Advanced", completed: false)
 game_3.user = user_3
 player1 = Player.create!(user: user_11, game: game_3, team: 1)
 player2 = Player.create!(user: user_12, game: game_3, team: 1)
