@@ -3,7 +3,7 @@
   data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>"
   data-chatroom-subscription-current-user-id-value="<%= current_user.id %>">
 
-  <%= link_to dashboard_path, class: "backshowcr" do %>
+  <%= link_to game_path(@chatroom.id), class: "backshowcr" do %>
   <i class="fa-solid fa-arrow-left fa-2xl arrow-show" style="color: #004129;"></i>
 <% end %>
   <h1 class="locnmchatroom">#<%= @chatroom.game.location %></h1>
