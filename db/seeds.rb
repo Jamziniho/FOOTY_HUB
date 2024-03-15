@@ -173,6 +173,11 @@ user_avatar31 = URI.open("https://res.cloudinary.com/wagon/image/upload/c_fill,g
 user_31.photo.attach(io: user_avatar31, filename: 'Saka_pic', content_type: "image/jpeg")
 user_31.save!
 
+user_32 = User.create!(first_name: "Marco", last_name: "Ricco", email: "test31@test.com", password: "123456", preferred_position: "Defensive", level: "Intermediate", age: 25 )
+user_avatar32 = URI.open("https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1639647622/uyye8sjnejcohlb5gcui.jpg")
+user_32.photo.attach(io: user_avatar32, filename: 'Saka_pic', content_type: "image/jpeg")
+user_32.save!
+
 puts "User created!"
 
 puts "Creating games with chatrooms..."
@@ -192,7 +197,7 @@ player5 = Player.create!(user: user_15, game: game_2, team: 1)
 game_2.save!
 Chatroom.create!(game: game_2)
 
-game_3 = Game.new(price: 6.0, game_size: 7, date: DateTime.parse("2024/04/06 13:00"), location: "City of London Academy", description: "This casual and inclusive game is open to players of all skills and abilities, Please come 10 minutes before the kick-off.", gender: "Any", level: "Advanced", completed: false)
+game_3 = Game.new(price: 6.0, game_size: 7, date: DateTime.parse("2024/04/06 13:00"), location: "City of London Academy", description: "This Advanced and inclusive game is very competitive, big game players should be joining  Please come 10 minutes before the kick-off to avoid fustrating the other players.", gender: "Any", level: "Advanced", completed: false)
 game_3.user = user_3
 player1 = Player.create!(user: user_11, game: game_3, team: 1)
 player2 = Player.create!(user: user_12, game: game_3, team: 1)
@@ -234,14 +239,14 @@ p_15 = Player.create!(user: user_21, game: game_5, team: 2)
 game_5.save!
 Chatroom.create!(game: game_5)
 
-game_6 = Game.new(price: 6.30, game_size: 11, date: DateTime.parse("2024/04/15 13:00"), location: "Trinity Sports Centre", description: "Come and play a casual footbal game in Central Manchester. We play at Pitch 2 (Middle pitch), we promote a friendly atmosphere - no shouting or aggressive behaviour. If you can't make it, ensure you remove your name from the list ASAP. No spot selling or trading allowed!. All weather 4G artifiacial grass. Big goals with side lines. Footwear: Astro-turfs or moulds recommended, no metal studs or blades. Changing rooms and showers available", gender: "Female", level: "Casual", completed: false)
+game_6 = Game.new(price: 6.30, game_size: 11, date: DateTime.parse("2024/04/15 13:00"), location: "Trinity Sports Centre", description: "Come and play a casual footbal game in North London. We play at Pitch 2 (Middle pitch), we promote a friendly atmosphere - no shouting or aggressive behaviour. If you can't make it, ensure you remove your name from the list ASAP. No spot selling or trading allowed!. All weather 4G artifiacial grass. Big goals with side lines. Footwear: Astro-turfs or moulds recommended, no metal studs or blades. Changing rooms and showers available", gender: "Female", level: "Casual", completed: false)
 game_6.user = user_6
 player_1 = Player.create!(user: user_9, game: game_6, team: 1)
 player_2 = Player.create!(user: user_22, game: game_6, team: 1)
 player_3 = Player.create!(user: user_5, game: game_6, team: 1)
 player_4 = Player.create!(user: user_25, game: game_6, team: 1)
 player_5 = Player.create!(user: user_23, game: game_6, team: 1)
-player_6 = Player.create!(user: user_28, game: game_6, team: 2)
+player_6 = Player.create!(user: user_28, game: game_6, team: 1)
 player_7 = Player.create!(user: user_21, game: game_6, team: 2)
 player_8 = Player.create!(user: user_27, game: game_6, team: 2)
 player_9 = Player.create!(user: user_29, game: game_6, team: 2)
@@ -254,8 +259,13 @@ game_7.user = user_7
 game_7.save!
 Chatroom.create!(game: game_7)
 
-game_8 = Game.new(price: 5.0, game_size: 7, date: DateTime.parse("2024/04/14 13:00"), location: "Stannyfields Pitches", description: "Please arrive 10-15mins before. 1-hour slot. Brief intros, team selections and we'll kick-off", gender: "Any", level: "Advanced", completed: false)
+game_8 = Game.new(price: 5.0, game_size: 5, date: DateTime.parse("2024/04/14 13:00"), location: "Stannyfields Pitches", description: "Please arrive 10-15mins before. 1-hour slot. Brief intros, team selections and we'll kick-off", gender: "Any", level: "Advanced", completed: false)
 game_8.user = user_8
+ppp6 = Player.create!(user: user_3, game: game_8, team: 1)
+ppp7 = Player.create!(user: user_10, game: game_8, team: 1)
+ppp8 = Player.create!(user: user_7, game: game_8, team: 1)
+ppp9 = Player.create!(user: user_30, game: game_8, team: 2)
+ppp0 = Player.create!(user: user_32, game: game_8, team: 2)
 game_8.save!
 Chatroom.create!(game: game_8)
 
@@ -268,6 +278,7 @@ game_10 = Game.new(price: 5.15, game_size: 7, date: DateTime.parse("2024/04/06 1
 game_10.user = user_10
 game_10.save!
 Chatroom.create!(game: game_10)
+
 puts "Games and chatrooms created!"
 
 puts "Creating players..."
@@ -301,11 +312,6 @@ player_6 = Player.new(accepted: false, team: 2)
 player_6.user = user_6
 player_6.game = game_6
 player_6.save!
-
-player_7 = Player.new(accepted: false, team: 2)
-player_7.user = user_7
-player_7.game = game_7
-player_7.save!
 
 player_8 = Player.new(accepted: false, team: 2)
 player_8.user = user_8
